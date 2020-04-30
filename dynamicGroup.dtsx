@@ -1,0 +1,2404 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/29/2019 6:41:48 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CAAWSD006"
+  DTS:CreatorName="VALENET\bcmenic"
+  DTS:DTSID="{870E8DC7-16D8-4FBF-B17C-45CC2FAB3292}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{587D8A66-5F9A-46D3-A0B1-181715EE4B02}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).IAM 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1BB85E3D-9BE5-49F3-8140-5A8FFD4726E4}"
+      DTS:ObjectName="(local).IAM 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=IAM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV - dynamicGroup - NEW]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{c4746cbe-97f2-4cd5-8a16-535d295d4cee}"
+      DTS:ObjectName="CSV - dynamicGroup - NEW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\dynamicGroup\dynamicGroup_NEW.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{3F644C02-22F6-4D06-A833-42A917A2545D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Description"
+              DTS:DTSID="{457EA9E8-B5EC-46E8-BF16-D18D1C450146}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dgAllowDuplicates"
+              DTS:DTSID="{660E951F-3792-49C8-94E8-C4C7C8CC4671}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dgAllowUnknown"
+              DTS:DTSID="{F6F1A2FA-06FF-4023-B01B-6C573C6E9699}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dgIdentity"
+              DTS:DTSID="{6ADB1596-E10C-4485-8102-53E8BEAF35B5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dgTimeOut"
+              DTS:DTSID="{E93F6A10-C05D-45B6-AC53-093520C180A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EquivalentToMe"
+              DTS:DTSID="{3278E291-AD68-4679-B5DD-BD82C2BABDF7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Member"
+              DTS:DTSID="{CD21C15D-24E3-46E7-A63E-9CE2180C7AC4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="memberQuery"
+              DTS:DTSID="{7B6590A0-BF31-4A2B-B2E1-E01D4242E145}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SecurityEquals"
+              DTS:DTSID="{5F620E10-8A6D-42A3-B40F-DC01B7EA3AD9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Owner"
+              DTS:DTSID="{0A70F5EC-60BE-447C-A6F9-1A5DBB1A3AA0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ObjectClass"
+              DTS:DTSID="{17D94528-23EC-4393-B695-F52AC5E0B920}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="excludedMember"
+              DTS:DTSID="{CA0CA190-B947-4F57-9065-745C847CE652}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV - dynamicGroup - OLD]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3AEEF443-132A-4985-8F1B-EE179A5DEF09}"
+      DTS:ObjectName="CSV - dynamicGroup - OLD">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\dynamicGroup\dynamicGroup_OLD.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{9C6B4160-D205-41B4-8C8A-44841D49DA37}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Description"
+              DTS:DTSID="{343673D2-9A54-4308-9F26-C031D94D7AD5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dgAllowDuplicates"
+              DTS:DTSID="{420802CA-688B-461C-8C31-92B93FAF190F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dgAllowUnknown"
+              DTS:DTSID="{DCC34F70-40DA-4BEF-A089-7D1199420A7A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dgIdentity"
+              DTS:DTSID="{88E60670-ACF9-40D0-A603-AA68A7B0F3BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dgTimeOut"
+              DTS:DTSID="{C07C9B5B-E64C-43B8-A5E8-2A4968412ACF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EquivalentToMe"
+              DTS:DTSID="{818A7572-190F-4222-ADDB-1FB716F57280}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Member"
+              DTS:DTSID="{B77E1632-6A64-4A04-A187-E22E85637F1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="memberQuery"
+              DTS:DTSID="{1D4BB74C-217D-48F0-87AE-7464A0FBABFC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SecurityEquals"
+              DTS:DTSID="{AAC0B1A8-24F9-4402-B807-02C8B67BBB43}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Owner"
+              DTS:DTSID="{B63CACBA-5EC8-413D-8D20-1EBC9B0640F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ObjectClass"
+              DTS:DTSID="{D6106E04-C318-470B-8F4B-DAB4180FAE7F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="excludedMember"
+              DTS:DTSID="{8F9CA4E4-CABB-4CE9-AC50-5EE10845EF72}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{75DBF322-AAB6-4BA5-8806-C1B99F584FD4}"
+      DTS:ObjectName="iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com;User ID=admin;Initial Catalog=IAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO/MQobS/E0KD8KNapErTlAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA50t5CqSO2Nnst8uxpOZSKAAAAAASAAACgAAAAEAAAAB7AKPbrkLwHMyhTqSFiMo8wAAAAqWFGjg+kOOjDnOEp6Rf+ZP0VPo5w3lFj17f+KvTH/zftXUw8t8xSJC7coeDsvoLuFAAAAKIZmdZc+rkHdSYhKrrlOB8H4Qdv</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3e501402-e6ae-44cc-87a3-b30ea68d874a}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data SQL - dynamicGroup - Step 1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{b62790ab-36e2-4a61-9dea-3f083ab4a700}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data SQL - dynamicGroup - Step 1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{75DBF322-AAB6-4BA5-8806-C1B99F584FD4}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.STG_dynamicGroup_OLD&#xA;&#xA;Truncate table IAM.dbo.STG_dynamicGroup_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data SQL - dynamicGroup - Step 2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{baf996ba-94b3-4f49-b8a4-5f75e8a7fb18}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data SQL - dynamicGroup - Step 2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{75DBF322-AAB6-4BA5-8806-C1B99F584FD4}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.STG_dynamicGroup_OLD&#xA;&#xA;Truncate table IAM.dbo.STG_dynamicGroup_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data SQL - dynamicGroups Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{e7aaf40a-71ed-4dd4-8fc6-696d5f861a34}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data SQL - dynamicGroups Tables"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{75DBF322-AAB6-4BA5-8806-C1B99F584FD4}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.dynamicGroup_OLD&#xA;&#xA;Truncate table IAM.dbo.dynamicGroup_NEW&#xA;&#xA;Truncate table IAM.dbo.Splited_DynamicGroups_member_OLD&#xA;&#xA;Truncate table IAM.dbo.Splited_DynamicGroups_member_NEW&#xA;&#xA;Truncate table IAM.dbo.Splited_DynamicGroups_EquivalentToMe_OLD&#xA;&#xA;Truncate table IAM.dbo.Splited_DynamicGroups_EquivalentToMe_NEW&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Import dynamicGroups OLD and NEW"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{cb92d538-0c28-4b70-ac84-86c44ad3247c}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import dynamicGroups OLD and NEW"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - dynamicGroup - NEW"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CSV - dynamicGroup - NEW]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV - dynamicGroup - NEW]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          name="ObjectClass"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[Description]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[Description]"
+                          name="Description"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[dgAllowDuplicates]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[dgAllowDuplicates]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[dgAllowDuplicates]"
+                          name="dgAllowDuplicates"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[dgAllowUnknown]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[dgAllowUnknown]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[dgAllowUnknown]"
+                          name="dgAllowUnknown"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[dgIdentity]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[dgIdentity]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[dgIdentity]"
+                          name="dgIdentity"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[dgTimeOut]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[dgTimeOut]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[dgTimeOut]"
+                          name="dgTimeOut"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[EquivalentToMe]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[EquivalentToMe]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[EquivalentToMe]"
+                          name="EquivalentToMe"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[Member]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[Member]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[Member]"
+                          name="Member"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[memberQuery]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[memberQuery]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[memberQuery]"
+                          name="memberQuery"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[SecurityEquals]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[SecurityEquals]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[SecurityEquals]"
+                          name="SecurityEquals"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[Owner]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[Owner]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[Owner]"
+                          name="Owner"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[excludedMember]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[excludedMember]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[excludedMember]"
+                          name="excludedMember"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="200"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                          dataType="wstr"
+                          length="200"
+                          name="Description" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[dgAllowDuplicates]"
+                          dataType="wstr"
+                          length="200"
+                          name="dgAllowDuplicates" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[dgAllowUnknown]"
+                          dataType="wstr"
+                          length="200"
+                          name="dgAllowUnknown" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[dgIdentity]"
+                          dataType="wstr"
+                          length="200"
+                          name="dgIdentity" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[dgTimeOut]"
+                          dataType="wstr"
+                          length="200"
+                          name="dgTimeOut" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[EquivalentToMe]"
+                          codePage="1252"
+                          dataType="text"
+                          name="EquivalentToMe" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[Member]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Member" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[memberQuery]"
+                          dataType="wstr"
+                          length="200"
+                          name="memberQuery" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[SecurityEquals]"
+                          dataType="wstr"
+                          length="200"
+                          name="SecurityEquals" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[Owner]"
+                          dataType="wstr"
+                          length="200"
+                          name="Owner" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].ExternalColumns[excludedMember]"
+                          dataType="wstr"
+                          length="200"
+                          name="excludedMember" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - dynamicGroup - OLD"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CSV - dynamicGroup - OLD]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV - dynamicGroup - OLD]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          name="ObjectClass"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[Description]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[Description]"
+                          name="Description"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[dgAllowDuplicates]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[dgAllowDuplicates]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[dgAllowDuplicates]"
+                          name="dgAllowDuplicates"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[dgAllowUnknown]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[dgAllowUnknown]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[dgAllowUnknown]"
+                          name="dgAllowUnknown"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[dgIdentity]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[dgIdentity]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[dgIdentity]"
+                          name="dgIdentity"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[dgTimeOut]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[dgTimeOut]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[dgTimeOut]"
+                          name="dgTimeOut"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[EquivalentToMe]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[EquivalentToMe]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[EquivalentToMe]"
+                          name="EquivalentToMe"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[Member]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[Member]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[Member]"
+                          name="Member"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[memberQuery]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[memberQuery]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[memberQuery]"
+                          name="memberQuery"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[SecurityEquals]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[SecurityEquals]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[SecurityEquals]"
+                          name="SecurityEquals"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[Owner]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[Owner]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[Owner]"
+                          name="Owner"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[excludedMember]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[excludedMember]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[excludedMember]"
+                          name="excludedMember"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="200"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                          dataType="wstr"
+                          length="200"
+                          name="Description" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[dgAllowDuplicates]"
+                          dataType="wstr"
+                          length="200"
+                          name="dgAllowDuplicates" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[dgAllowUnknown]"
+                          dataType="wstr"
+                          length="200"
+                          name="dgAllowUnknown" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[dgIdentity]"
+                          dataType="wstr"
+                          length="200"
+                          name="dgIdentity" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[dgTimeOut]"
+                          dataType="wstr"
+                          length="200"
+                          name="dgTimeOut" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[EquivalentToMe]"
+                          codePage="1252"
+                          dataType="text"
+                          name="EquivalentToMe" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[Member]"
+                          codePage="1252"
+                          dataType="text"
+                          name="Member" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[memberQuery]"
+                          dataType="wstr"
+                          length="200"
+                          name="memberQuery" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[SecurityEquals]"
+                          dataType="wstr"
+                          length="200"
+                          name="SecurityEquals" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[Owner]"
+                          dataType="wstr"
+                          length="200"
+                          name="Owner" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].ExternalColumns[excludedMember]"
+                          dataType="wstr"
+                          length="200"
+                          name="excludedMember" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion NEW"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input].Columns[EquivalentToMe]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="EquivalentToMe"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[EquivalentToMe]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input].Columns[Member]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="Member"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[Member]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of EquivalentToMe]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of EquivalentToMe]"
+                          name="Copy of EquivalentToMe"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[EquivalentToMe]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of Member]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of Member]"
+                          name="Copy of Member"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[Member]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion OLD"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input].Columns[EquivalentToMe]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="EquivalentToMe"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[EquivalentToMe]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input].Columns[Member]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="Member"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[Member]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of EquivalentToMe]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of EquivalentToMe]"
+                          name="Copy of EquivalentToMe"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[EquivalentToMe]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of Member]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of Member]"
+                          name="Copy of Member"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[Member]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - dynamicGroup - NEW"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[STG_DynamicGroup_NEW]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].Columns[ObjectClass]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ObjectClass"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ObjectClass]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[ObjectClass]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].Columns[Description]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="Description"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[Description]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].Columns[dgAllowDuplicates]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dgAllowDuplicates"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[dgAllowDuplicates]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[dgAllowDuplicates]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].Columns[dgAllowUnknown]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dgAllowUnknown"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[dgAllowUnknown]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[dgAllowUnknown]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].Columns[dgIdentity]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dgIdentity"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[dgIdentity]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[dgIdentity]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].Columns[dgTimeOut]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dgTimeOut"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[dgTimeOut]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[dgTimeOut]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].Columns[memberQuery]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="memberQuery"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[memberQuery]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[memberQuery]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].Columns[SecurityEquals]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="SecurityEquals"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[SecurityEquals]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[SecurityEquals]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].Columns[Owner]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="Owner"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[Owner]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[Owner]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].Columns[excludedMember]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="excludedMember"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[excludedMember]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output].Columns[excludedMember]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].Columns[Copy of EquivalentToMe]"
+                          cachedDataType="nText"
+                          cachedName="Copy of EquivalentToMe"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[EquivalentToMe]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of EquivalentToMe]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].Columns[Copy of Member]"
+                          cachedDataType="nText"
+                          cachedName="Copy of Member"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[Member]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of Member]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="200"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                          dataType="wstr"
+                          length="200"
+                          name="Description" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[dgAllowDuplicates]"
+                          dataType="wstr"
+                          length="200"
+                          name="dgAllowDuplicates" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[dgAllowUnknown]"
+                          dataType="wstr"
+                          length="200"
+                          name="dgAllowUnknown" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[dgIdentity]"
+                          dataType="wstr"
+                          length="200"
+                          name="dgIdentity" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[dgTimeOut]"
+                          dataType="wstr"
+                          length="200"
+                          name="dgTimeOut" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[EquivalentToMe]"
+                          dataType="nText"
+                          name="EquivalentToMe" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[Member]"
+                          dataType="nText"
+                          name="Member" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[memberQuery]"
+                          dataType="wstr"
+                          length="200"
+                          name="memberQuery" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[SecurityEquals]"
+                          dataType="wstr"
+                          length="200"
+                          name="SecurityEquals" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[Owner]"
+                          dataType="wstr"
+                          length="200"
+                          name="Owner" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input].ExternalColumns[excludedMember]"
+                          dataType="wstr"
+                          length="200"
+                          name="excludedMember" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - dynamicGroup - OLD"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[STG_DynamicGroup_OLD]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].Columns[ObjectClass]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ObjectClass"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ObjectClass]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[ObjectClass]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].Columns[Description]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="Description"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[Description]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].Columns[dgAllowDuplicates]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dgAllowDuplicates"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[dgAllowDuplicates]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[dgAllowDuplicates]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].Columns[dgAllowUnknown]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dgAllowUnknown"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[dgAllowUnknown]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[dgAllowUnknown]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].Columns[dgIdentity]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dgIdentity"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[dgIdentity]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[dgIdentity]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].Columns[dgTimeOut]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dgTimeOut"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[dgTimeOut]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[dgTimeOut]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].Columns[memberQuery]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="memberQuery"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[memberQuery]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[memberQuery]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].Columns[SecurityEquals]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="SecurityEquals"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[SecurityEquals]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[SecurityEquals]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].Columns[Owner]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="Owner"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[Owner]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[Owner]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].Columns[excludedMember]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="excludedMember"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[excludedMember]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output].Columns[excludedMember]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].Columns[Copy of EquivalentToMe]"
+                          cachedDataType="nText"
+                          cachedName="Copy of EquivalentToMe"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[EquivalentToMe]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of EquivalentToMe]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].Columns[Copy of Member]"
+                          cachedDataType="nText"
+                          cachedName="Copy of Member"
+                          externalMetadataColumnId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[Member]"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of Member]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="200"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                          dataType="wstr"
+                          length="200"
+                          name="Description" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[dgAllowDuplicates]"
+                          dataType="wstr"
+                          length="200"
+                          name="dgAllowDuplicates" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[dgAllowUnknown]"
+                          dataType="wstr"
+                          length="200"
+                          name="dgAllowUnknown" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[dgIdentity]"
+                          dataType="wstr"
+                          length="200"
+                          name="dgIdentity" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[dgTimeOut]"
+                          dataType="wstr"
+                          length="200"
+                          name="dgTimeOut" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[EquivalentToMe]"
+                          dataType="nText"
+                          name="EquivalentToMe" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[Member]"
+                          dataType="nText"
+                          name="Member" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[memberQuery]"
+                          dataType="wstr"
+                          length="200"
+                          name="memberQuery" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[SecurityEquals]"
+                          dataType="wstr"
+                          length="200"
+                          name="SecurityEquals" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[Owner]"
+                          dataType="wstr"
+                          length="200"
+                          name="Owner" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input].ExternalColumns[excludedMember]"
+                          dataType="wstr"
+                          length="200"
+                          name="excludedMember" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Import dynamicGroups OLD and NEW.Paths[Data Conversion Output]"
+                  endId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Sequence Container\Import dynamicGroups OLD and NEW.Paths[Data Conversion Output1]"
+                  endId="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Sequence Container\Import dynamicGroups OLD and NEW.Paths[Flat File Source Output]"
+                  endId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Sequence Container\Import dynamicGroups OLD and NEW.Paths[Flat File Source Output1]"
+                  endId="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Insert into SQL - dynamicGroup Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{d567d117-2c18-4929-9341-6b0b5f9a8c62}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert into SQL - dynamicGroup Tables"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{75DBF322-AAB6-4BA5-8806-C1B99F584FD4}"
+              SQLTask:SqlStatementSource="INSERT INTO IAM.dbo.dynamicGroup_OLD&#xA;           ([DN]&#xA;           ,[Description]&#xA;           ,[dgAllowDuplicates]&#xA;           ,[dgAllowUnknown]&#xA;           ,[dgIdentity]&#xA;           ,[dgTimeOut]&#xA;           ,[EquivalentToMe]&#xA;           ,[Member]&#xA;           ,[memberQuery]&#xA;           ,[SecurityEquals]&#xA;           ,[Owner]&#xA;           ,[ObjectClass]&#xA;           ,[excludedMember])&#xA;SELECT&#xA;            [DN]&#xA;           ,[Description]&#xA;           ,[dgAllowDuplicates]&#xA;           ,[dgAllowUnknown]&#xA;           ,[dgIdentity]&#xA;           ,[dgTimeOut]&#xA;           ,[EquivalentToMe]&#xA;           ,[Member]&#xA;           ,[memberQuery]&#xA;           ,[SecurityEquals]&#xA;           ,[Owner]&#xA;           ,[ObjectClass]&#xA;           ,[excludedMember]&#xA;FROM IAM.dbo.STG_dynamicGroup_OLD&#xA;&#xA;INSERT INTOIAM.dbo.dynamicGroup_NEW&#xA;           ([DN]&#xA;           ,[Description]&#xA;           ,[dgAllowDuplicates]&#xA;           ,[dgAllowUnknown]&#xA;           ,[dgIdentity]&#xA;           ,[dgTimeOut]&#xA;           ,[EquivalentToMe]&#xA;           ,[Member]&#xA;           ,[memberQuery]&#xA;           ,[SecurityEquals]&#xA;           ,[Owner]&#xA;           ,[ObjectClass]&#xA;           ,[excludedMember])&#xA;SELECT&#xA;            [DN]&#xA;           ,[Description]&#xA;           ,[dgAllowDuplicates]&#xA;           ,[dgAllowUnknown]&#xA;           ,[dgIdentity]&#xA;           ,[dgTimeOut]&#xA;           ,[EquivalentToMe]&#xA;           ,[Member]&#xA;           ,[memberQuery]&#xA;           ,[SecurityEquals]&#xA;           ,[Owner]&#xA;           ,[ObjectClass]&#xA;           ,[excludedMember]&#xA;FROM IAM.dbo.STG_dynamicGroup_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Sequence Container"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{52a086a0-6672-46f7-b425-678ec1e2eb35}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Sequence Container">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Sequence Container\Split EquivalentToMe information"
+              DTS:CreationName="Microsoft.ExecuteProcess"
+              DTS:Description="Execute Process Task"
+              DTS:DTSID="{0484484b-93c7-4fc8-b6bb-c8ed91a47388}"
+              DTS:ExecutableType="Microsoft.ExecuteProcess"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Split EquivalentToMe information"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ExecuteProcessData
+                  Executable="C:\Users\bcmenic\Desktop\OrderValuesInAttributes\Published\OrderValuesInAttributes.exe"
+                  Arguments="DynamicGroups_equivalentToMe Split remote" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Sequence Container\Sequence Container\Split member information"
+              DTS:CreationName="Microsoft.ExecuteProcess"
+              DTS:Description="Execute Process Task"
+              DTS:DTSID="{7cd6b032-679d-44ef-994c-d48ddf5cabcb}"
+              DTS:ExecutableType="Microsoft.ExecuteProcess"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Split member information"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ExecuteProcessData
+                  Executable="C:\Users\bcmenic\Desktop\OrderValuesInAttributes\Published\OrderValuesInAttributes.exe"
+                  Arguments="DynamicGroups_member Split remote" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Sort ObjectClass"
+          DTS:CreationName="Microsoft.ExecuteProcess"
+          DTS:Description="Execute Process Task"
+          DTS:DTSID="{dd312645-658c-4c22-81cf-895ba59d8e46}"
+          DTS:ExecutableType="Microsoft.ExecuteProcess"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Sort ObjectClass"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecuteProcessData
+              Executable="C:\Users\bcmenic\Desktop\OrderValuesInAttributes\Published\OrderValuesInAttributes.exe"
+              Arguments="dynamicGroup Sort remote" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{985e3ba3-657a-4c70-bf0c-73f3d9ecf32e}"
+          DTS:From="Package\Sequence Container\Delete data SQL - dynamicGroup - Step 1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\Import dynamicGroups OLD and NEW" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{8A2FBC81-8ACA-4A88-9650-EDDDB1E1ACD9}"
+          DTS:From="Package\Sequence Container\Import dynamicGroups OLD and NEW"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\Delete data SQL - dynamicGroups Tables" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{E0F15B66-8E88-4146-984F-8C658CE90C31}"
+          DTS:From="Package\Sequence Container\Delete data SQL - dynamicGroups Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Sequence Container\Sequence Container" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{5a93c598-b40a-4840-85a1-69a5477c9aed}"
+          DTS:From="Package\Sequence Container\Insert into SQL - dynamicGroup Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Sequence Container\Delete data SQL - dynamicGroup - Step 2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{68211187-8F59-4492-A14E-25C87D4D1635}"
+          DTS:From="Package\Sequence Container\Sequence Container"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Sequence Container\Sort ObjectClass" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{73bc82f0-2e09-4918-9c5d-fdff11cc3c2b}"
+          DTS:From="Package\Sequence Container\Sort ObjectClass"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Sequence Container\Insert into SQL - dynamicGroup Tables" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="282,42"
+          Id="Package\Sequence Container\Delete data SQL - dynamicGroup - Step 1"
+          TopLeft="153,27" />
+        <NodeLayout
+          Size="282,42"
+          Id="Package\Sequence Container\Delete data SQL - dynamicGroup - Step 2"
+          TopLeft="154.714285714286,626.571428571428" />
+        <NodeLayout
+          Size="283,42"
+          Id="Package\Sequence Container\Delete data SQL - dynamicGroups Tables"
+          TopLeft="153,179.571428571429" />
+        <NodeLayout
+          Size="266,42"
+          Id="Package\Sequence Container\Import dynamicGroups OLD and NEW"
+          TopLeft="159,102" />
+        <NodeLayout
+          Size="269,42"
+          Id="Package\Sequence Container\Insert into SQL - dynamicGroup Tables"
+          TopLeft="158,550.571428571428" />
+        <NodeLayout
+          Size="241,42"
+          Id="Package\Sequence Container\Sequence Container\Split EquivalentToMe information"
+          TopLeft="268,22" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\Sequence Container\Sequence Container\Split member information"
+          TopLeft="55,22" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="541,119"
+          Size="541,162"
+          Id="Package\Sequence Container\Sequence Container"
+          TopLeft="21.5,274.571428571428" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Sequence Container\Sort ObjectClass"
+          TopLeft="209.142857142857,474.428571428571" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="293,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="293.25,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.571428571429"
+              Start="0,0"
+              End="0,28.071428571429">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.071428571429" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="293.25,221.571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.999999999999"
+              Start="0,0"
+              End="0,45.499999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.499999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="294.107142857143,592.571428571428">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
+          TopLeft="291.071428571429,436.571428571428">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.8571428571431"
+              Start="0,0"
+              End="0,30.3571428571431">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.3571428571431" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 5]"
+          TopLeft="291.321428571429,516.428571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.142857142857"
+              Start="0,0"
+              End="0,26.642857142857">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.642857142857" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="634,753"
+          Size="634,796"
+          Id="Package\Sequence Container"
+          TopLeft="60,219" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Import dynamicGroups OLD and NEW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="217,42"
+          Id="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW"
+          TopLeft="493,268" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - OLD"
+          TopLeft="212,88" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion OLD"
+          TopLeft="230,179" />
+        <NodeLayout
+          Size="214,42"
+          Id="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD"
+          TopLeft="217,269" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Sequence Container\Import dynamicGroups OLD and NEW\Data Conversion NEW"
+          TopLeft="511,179" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Sequence Container\Import dynamicGroups OLD and NEW\CSV - dynamicGroup - NEW"
+          TopLeft="493,88" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Import dynamicGroups OLD and NEW.Paths[Flat File Source Output1]"
+          TopLeft="603.75,130">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Import dynamicGroups OLD and NEW.Paths[Flat File Source Output]"
+          TopLeft="321.25,130">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Import dynamicGroups OLD and NEW.Paths[Data Conversion Output1]"
+          TopLeft="603.5,221">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Import dynamicGroups OLD and NEW.Paths[Data Conversion Output]"
+          TopLeft="323.5,221">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - NEW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import dynamicGroups OLD and NEW\SQL - dynamicGroup - OLD">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

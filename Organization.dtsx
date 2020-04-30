@@ -1,0 +1,1577 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/13/2019 12:48:32 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CAAWSD006"
+  DTS:CreatorName="VALENET\bcmenic"
+  DTS:DTSID="{D657C73F-CC80-4C11-9255-6A6EB5676BA8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{EC2634DE-976F-4BBB-9E1F-63DB409835EE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).IAM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8EDD2E42-0A2C-4E37-B178-104F60AB8E87}"
+      DTS:ObjectName="(local).IAM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=IAM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).IAM 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1BB85E3D-9BE5-49F3-8140-5A8FFD4726E4}"
+      DTS:ObjectName="(local).IAM 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=IAM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV - Organization - NEW]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{65a2441d-b16e-4764-b6ba-cbdc9fb43628}"
+      DTS:ObjectName="CSV - Organization - NEW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\Organization\Organization_NEW.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{BCBDD77E-B2BB-41E2-8460-25D2AA6F8B69}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Description"
+              DTS:DTSID="{5027D192-27FB-48B3-944A-AEFD3E4B316B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACL"
+              DTS:DTSID="{7771AA16-103E-4CD2-8514-ECAB137490E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="O"
+              DTS:DTSID="{0DE01AF6-5437-4D30-8B89-33E8D8BACD05}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DirXML-Associations"
+              DTS:DTSID="{6906E5C8-77E8-432E-A1F3-2D0F59C80D62}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV - Organization - OLD]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3AEEF443-132A-4985-8F1B-EE179A5DEF09}"
+      DTS:ObjectName="CSV - Organization - OLD">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\Organization\Organization_OLD.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{B36088D2-F2E4-45A4-AE82-BB0F6626BF37}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Description"
+              DTS:DTSID="{9572FB7A-C8A6-442C-A038-2CDEB0640EA8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACL"
+              DTS:DTSID="{4EAE52D0-ADF5-4351-82C1-79C97470B441}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="O"
+              DTS:DTSID="{96C4D63F-2F7B-4700-916C-8F3F9E1959AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DirXML-Associations"
+              DTS:DTSID="{15940498-C21C-4485-9C99-EF88765230C4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{27B42FDF-A369-44E8-9938-D50979193D29}"
+      DTS:ObjectName="iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com;User ID=Admin;Initial Catalog=IAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO/MQobS/E0KD8KNapErTlAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAZVVms0Ya/v2ZTdp9e6rZwAAAAAASAAACgAAAAEAAAAHG81aXlW/dD3/VKHyHS0NwwAAAA/QxeubHZMn8NNMVbOsS1VJUhnFr0i8ycvunrCzJc8C0ac6X+C1/wEAzULM5ZhCOQFAAAAMZ9FjnRHMWqlhhFLd1teVxXPh3B</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{EA90A78B-4175-4450-89E4-E26AA9D368A0}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data from Local SQL - Organization - Step 1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{df25e9d7-7cf9-48f4-ba2f-e1709b503acd}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Local SQL - Organization - Step 1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{27B42FDF-A369-44E8-9938-D50979193D29}"
+              SQLTask:SqlStatementSource="Delete from IAM.dbo.STG_Organization_OLD&#xA;&#xA;Delete from IAM.dbo.STG_Organization_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data from Local SQL - Organization - Step 2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{cc052fc2-5cca-4c90-b865-21b9c92b5efc}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Local SQL - Organization - Step 2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{27B42FDF-A369-44E8-9938-D50979193D29}"
+              SQLTask:SqlStatementSource="Delete from IAM.dbo.STG_Organization_OLD&#xA;&#xA;Delete from IAM.dbo.STG_Organization_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data from Remote SQL - Organization Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{f1366cf6-846c-4db5-b9bb-5f846dcfa56a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Remote SQL - Organization Tables"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{27B42FDF-A369-44E8-9938-D50979193D29}"
+              SQLTask:SqlStatementSource="DELETE FROM IAM.dbo.Organization_OLD&#xA;&#xA;DELETE FROM IAM.dbo.Organization_NEW&#xA;&#xA;DELETE FROM IAM.dbo.Splited_Organization_ACL_OLD&#xA;&#xA;DELETE FROM IAM.dbo.Splited_Organization_ACL_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Equalize Data - DirXML-Associations"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0c27dc01-bfe3-44f2-8ab3-913b59d1dae3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Equalize Data - DirXML-Associations"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{27B42FDF-A369-44E8-9938-D50979193D29}"
+              SQLTask:SqlStatementSource="UPDATE STG_Organization_OLD&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'Vale_IDV_DR_SET' , 'DriverSet')&#xA;&#xA;UPDATE STG_Organization_OLD&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'DriverSetSync', 'DriverSet')&#xA;&#xA;UPDATE STG_Organization_OLD&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'CURRIDV2IDV', 'IDV2IDV')&#xA;&#xA;UPDATE STG_Organization_NEW&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'NEWIDV2IDV', 'IDV2IDV')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Import Organization OLD and NEW"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{61c15cd0-cac8-4119-9b14-257c73d631eb}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Organization OLD and NEW"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - Organization - NEW"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CSV - Organization - NEW]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV - Organization - NEW]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].Columns[Description]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].Columns[Description]"
+                          name="Description"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].Columns[ACL]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].Columns[ACL]"
+                          name="ACL"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].Columns[O]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].ExternalColumns[O]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].Columns[O]"
+                          name="O"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          name="DirXML-Associations"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="200"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                          dataType="wstr"
+                          length="200"
+                          name="Description" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          codePage="1252"
+                          dataType="text"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].ExternalColumns[O]"
+                          dataType="wstr"
+                          length="200"
+                          name="O" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          dataType="wstr"
+                          length="200"
+                          name="DirXML-Associations" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - Organization - OLD"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CSV - Organization - OLD]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV - Organization - OLD]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].Columns[Description]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].Columns[Description]"
+                          name="Description"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].Columns[ACL]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].Columns[ACL]"
+                          name="ACL"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].Columns[O]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].ExternalColumns[O]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].Columns[O]"
+                          name="O"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          name="DirXML-Associations"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="200"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                          dataType="wstr"
+                          length="200"
+                          name="Description" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          codePage="1252"
+                          dataType="text"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].ExternalColumns[O]"
+                          dataType="wstr"
+                          length="200"
+                          name="O" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          dataType="wstr"
+                          length="200"
+                          name="DirXML-Associations" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion NEW"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input].Columns[ACL]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="ACL"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].Columns[ACL]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of ACL]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of ACL]"
+                          name="Copy of ACL"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].Columns[ACL]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion OLD"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input].Columns[ACL]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="ACL"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].Columns[ACL]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of ACL]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of ACL]"
+                          name="Copy of ACL"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].Columns[ACL]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - Organization - NEW"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[STG_Organization_NEW]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input].Columns[Description]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="Description"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].Columns[Description]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input].Columns[Copy of ACL]"
+                          cachedDataType="nText"
+                          cachedName="Copy of ACL"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of ACL]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input].Columns[O]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="O"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input].ExternalColumns[O]"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].Columns[O]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input].Columns[DirXML-Associations]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="DirXML-Associations"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output].Columns[DirXML-Associations]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="200"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                          dataType="wstr"
+                          length="200"
+                          name="Description" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          dataType="nText"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input].ExternalColumns[O]"
+                          dataType="wstr"
+                          length="200"
+                          name="O" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          dataType="wstr"
+                          length="200"
+                          name="DirXML-Associations" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - Organization - OLD"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[STG_Organization_OLD]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input].Columns[Description]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="Description"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].Columns[Description]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input].Columns[O]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="O"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input].ExternalColumns[O]"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].Columns[O]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input].Columns[DirXML-Associations]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="DirXML-Associations"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output].Columns[DirXML-Associations]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input].Columns[Copy of ACL]"
+                          cachedDataType="nText"
+                          cachedName="Copy of ACL"
+                          externalMetadataColumnId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of ACL]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="200"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                          dataType="wstr"
+                          length="200"
+                          name="Description" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          dataType="nText"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input].ExternalColumns[O]"
+                          dataType="wstr"
+                          length="200"
+                          name="O" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          dataType="wstr"
+                          length="200"
+                          name="DirXML-Associations" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Import Organization OLD and NEW.Paths[Data Conversion Output]"
+                  endId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Sequence Container\Import Organization OLD and NEW.Paths[Data Conversion Output1]"
+                  endId="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Sequence Container\Import Organization OLD and NEW.Paths[Flat File Source Output]"
+                  endId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Sequence Container\Import Organization OLD and NEW.Paths[Flat File Source Output1]"
+                  endId="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Insert into Remote SQL - Organization Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{7a6dc455-51b9-4489-b731-c47c111275a4}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert into Remote SQL - Organization Tables"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{27B42FDF-A369-44E8-9938-D50979193D29}"
+              SQLTask:SqlStatementSource="INSERT INTO IAM.dbo.Organization_OLD&#xA;            &#x9;(dn,&#xA;&#x9;Description,&#xA;&#x9;ACL,&#xA;&#x9;O,&#x9;&#xA;&#x9;[DirXML-Associations])&#xA;     SELECT&#xA; &#x9;dn,&#xA;&#x9;Description,&#xA;&#x9;ACL,&#xA;&#x9;O,&#x9;&#xA;&#x9;[DirXML-Associations]&#xA;FROM IAM.dbo.STG_Organization_OLD&#xA;&#xA;INSERT INTO IAM.dbo.Organization_NEW&#xA;            &#x9;(dn,&#xA;&#x9;Description,&#xA;&#x9;ACL,&#xA;&#x9;O,&#x9;&#xA;&#x9;[DirXML-Associations])&#xA;     SELECT&#xA; &#x9;dn,&#xA;&#x9;Description,&#xA;&#x9;ACL,&#xA;&#x9;O,&#x9;&#xA;&#x9;[DirXML-Associations]&#xA;FROM IAM.dbo.STG_Organization_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Split ACL information"
+          DTS:CreationName="Microsoft.ExecuteProcess"
+          DTS:Description="Execute Process Task"
+          DTS:DTSID="{dee600df-3191-4adb-96da-9522b9e9a960}"
+          DTS:ExecutableType="Microsoft.ExecuteProcess"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Split ACL information"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecuteProcessData
+              Executable="C:\Users\bcmenic\Desktop\OrderValuesInAttributes\Published\OrderValuesInAttributes.exe"
+              Arguments="Organization_ACL Split remote" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{79981527-6588-4E58-B6F5-E3E37A339433}"
+          DTS:From="Package\Sequence Container\Delete data from Local SQL - Organization - Step 1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\Import Organization OLD and NEW" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{54D40012-F602-4A11-98D4-A59F18224811}"
+          DTS:From="Package\Sequence Container\Import Organization OLD and NEW"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\Equalize Data - DirXML-Associations" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{7390F641-E1A1-42CF-85B7-D259B6BB51C9}"
+          DTS:From="Package\Sequence Container\Equalize Data - DirXML-Associations"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Sequence Container\Delete data from Remote SQL - Organization Tables" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{AA6C2D6B-F45A-4A68-A599-0FD8E84A99F9}"
+          DTS:From="Package\Sequence Container\Insert into Remote SQL - Organization Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Sequence Container\Delete data from Local SQL - Organization - Step 2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{5B14CFFD-784E-4E4E-9549-8081DAE4E17A}"
+          DTS:From="Package\Sequence Container\Delete data from Remote SQL - Organization Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Sequence Container\Split ACL information" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{07168D10-9FD8-4CF7-87A1-41D39F101C45}"
+          DTS:From="Package\Sequence Container\Split ACL information"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Sequence Container\Insert into Remote SQL - Organization Tables" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="328,42"
+          Id="Package\Sequence Container\Delete data from Local SQL - Organization - Step 1"
+          TopLeft="67,24" />
+        <NodeLayout
+          Size="328,42"
+          Id="Package\Sequence Container\Delete data from Local SQL - Organization - Step 2"
+          TopLeft="55,515" />
+        <NodeLayout
+          Size="334,42"
+          Id="Package\Sequence Container\Delete data from Remote SQL - Organization Tables"
+          TopLeft="60,258" />
+        <NodeLayout
+          Size="259,42"
+          Id="Package\Sequence Container\Equalize Data - DirXML-Associations"
+          TopLeft="94,182" />
+        <NodeLayout
+          Size="251,42"
+          Id="Package\Sequence Container\Import Organization OLD and NEW"
+          TopLeft="99,107" />
+        <NodeLayout
+          Size="302,42"
+          Id="Package\Sequence Container\Insert into Remote SQL - Organization Tables"
+          TopLeft="73,425" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Sequence Container\Split ACL information"
+          TopLeft="135,341" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="227.75,66">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="224,149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="225.25,224">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="221.5,467">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
+          TopLeft="226.5,300">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 5]"
+          TopLeft="225,383">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="403,642"
+          Size="403,685"
+          Id="Package\Sequence Container"
+          TopLeft="223,95" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Import Organization OLD and NEW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - OLD"
+          TopLeft="206,85" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Sequence Container\Import Organization OLD and NEW\CSV - Organization - NEW"
+          TopLeft="470,85" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW"
+          TopLeft="471,256" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion NEW"
+          TopLeft="479,169" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD"
+          TopLeft="204,268" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Sequence Container\Import Organization OLD and NEW\Data Conversion OLD"
+          TopLeft="212,174" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Import Organization OLD and NEW.Paths[Flat File Source Output1]"
+          TopLeft="574,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Import Organization OLD and NEW.Paths[Flat File Source Output]"
+          TopLeft="307,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Import Organization OLD and NEW.Paths[Data Conversion Output1]"
+          TopLeft="574.25,211">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Import Organization OLD and NEW.Paths[Data Conversion Output]"
+          TopLeft="305.75,216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - NEW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import Organization OLD and NEW\SQL - Organization - OLD">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

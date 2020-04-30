@@ -1,0 +1,1185 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/8/2019 3:32:14 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CAAWSD003"
+  DTS:CreatorName="VALENET\bcmenic"
+  DTS:DTSID="{D1AEB203-5F09-4D7D-AE4A-D97E01E0EB55}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{0D6D855C-A17A-42A3-8A06-5CCD4DB8CC8E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).IAM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{16CC30F0-F402-4803-AC62-B000B18019C3}"
+      DTS:ObjectName="(local).IAM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=IAM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E5D7BA16-EDFA-4A50-8341-88EBF9120DB5}"
+      DTS:ObjectName="iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com;User ID=admin;Initial Catalog=IAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArr5P3dMELUabwhws5ZNnqwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABff1Thed1vCLkPEBXV4hI3AAAAAASAAACgAAAAEAAAAEo0NhTKX8krl5NMwpWm2rwwAAAAj5NQuFjLpxB69uzsGEAdCLZejL+PAqrMkX31huQGPFvSWiAnWu/05X27M81isHMWFAAAAMgd00IVCCrnFxfOdExX/bWq5bTs</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Users SecurityEquals_OLD]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{AB7C7A79-7AFE-441B-B3AB-2EE30DFFD4C2}"
+      DTS:ObjectName="Users SecurityEquals_OLD">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\Users securityEquals\Users_securityEquals_OLD.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{5A58A60B-0BE9-44DA-B8BB-18C26D120EEF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SecurityEquals"
+              DTS:DTSID="{93F83A9C-9590-444B-B624-09BCC265CEC9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[User_SecurityEquals New]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{DA4F3FEF-76F8-4C46-BA49-C964B0C9B483}"
+      DTS:ObjectName="User_SecurityEquals New">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\Users securityEquals\Users_securityEquals_NEW.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{965A7ED7-8D87-403F-A846-5CB8B739C998}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SecurityEquals"
+              DTS:DTSID="{AAE0D163-22C1-484E-BAE3-F1A510EE0249}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Import securityEquals Data"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{e73d5abf-3c65-4594-9502-1fa613ad03a2}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import securityEquals Data">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Import securityEquals Data\Delete data from Local SQL - Users_securityEquals Tables - Step 1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ba7d9687-5a5f-47f0-b21d-c35acd43584c}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Local SQL - Users_securityEquals Tables - Step 1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{16CC30F0-F402-4803-AC62-B000B18019C3}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.Users_securityEquals_OLD&#xA;&#xA;Truncate table IAM.dbo.Users_securityEquals_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Import securityEquals Data\Delete data from Local SQL - Users_securityEquals Tables - Step 2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{c150a682-9659-4c1a-8e27-a83fc379c5c6}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Local SQL - Users_securityEquals Tables - Step 2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{16CC30F0-F402-4803-AC62-B000B18019C3}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.Users_securityEquals_OLD&#xA;&#xA;Truncate table IAM.dbo.Users_securityEquals_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Import securityEquals Data\Delete data from Remote SQL - Splited_Users_SecurityEquals Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{99a7c122-0263-4e53-af5f-efc827152ce1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Remote SQL - Splited_Users_SecurityEquals Tables"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{E5D7BA16-EDFA-4A50-8341-88EBF9120DB5}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.Splited_Users_securityEquals_OLD&#xA;&#xA;Truncate table IAM.dbo.Splited_Users_securityEquals_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{30624ff0-a67c-4cc3-8c51-2b8e655ce8e9}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Users_securityEquals OLD and NEW"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - Users_SecurityEquals NEW"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[User_SecurityEquals New]"
+                      connectionManagerRefId="Package.ConnectionManagers[User_SecurityEquals New]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="100"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Output].Columns[SecurityEquals]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Output].ExternalColumns[SecurityEquals]"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Output].Columns[SecurityEquals]"
+                          name="SecurityEquals"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="100"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Output].ExternalColumns[SecurityEquals]"
+                          codePage="1252"
+                          dataType="text"
+                          name="SecurityEquals" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - Users_SecurityEquals OLD"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Users SecurityEquals_OLD]"
+                      connectionManagerRefId="Package.ConnectionManagers[Users SecurityEquals_OLD]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="100"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Output].Columns[SecurityEquals]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Output].ExternalColumns[SecurityEquals]"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Output].Columns[SecurityEquals]"
+                          name="SecurityEquals"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="100"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Output].ExternalColumns[SecurityEquals]"
+                          codePage="1252"
+                          dataType="text"
+                          name="SecurityEquals" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion NEW"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input].Columns[SecurityEquals]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="SecurityEquals"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Output].Columns[SecurityEquals]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of SecurityEquals]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of SecurityEquals]"
+                          name="Copy of SecurityEquals"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Output].Columns[SecurityEquals]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion OLD"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input].Columns[SecurityEquals]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="SecurityEquals"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Output].Columns[SecurityEquals]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of SecurityEquals]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of SecurityEquals]"
+                          name="Copy of SecurityEquals"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Output].Columns[SecurityEquals]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - Users_SecurityEquals - OLD"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Users_securityEquals_OLD]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[(local).IAM]"
+                      connectionManagerRefId="Package.ConnectionManagers[(local).IAM]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD.Inputs[OLE DB Destination Input].Columns[Copy of SecurityEquals]"
+                          cachedDataType="nText"
+                          cachedName="Copy of SecurityEquals"
+                          externalMetadataColumnId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD.Inputs[OLE DB Destination Input].ExternalColumns[securityEquals]"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of SecurityEquals]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="100"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD.Inputs[OLE DB Destination Input].ExternalColumns[securityEquals]"
+                          dataType="nText"
+                          name="securityEquals" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - Users_SecurityEquals NEW"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Users_securityEquals_NEW]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[(local).IAM]"
+                      connectionManagerRefId="Package.ConnectionManagers[(local).IAM]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW.Inputs[OLE DB Destination Input].Columns[Copy of SecurityEquals]"
+                          cachedDataType="nText"
+                          cachedName="Copy of SecurityEquals"
+                          externalMetadataColumnId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW.Inputs[OLE DB Destination Input].ExternalColumns[securityEquals]"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of SecurityEquals]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="100"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW.Inputs[OLE DB Destination Input].ExternalColumns[securityEquals]"
+                          dataType="nText"
+                          name="securityEquals" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW.Paths[Data Conversion Output]"
+                  endId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW.Paths[Data Conversion Output1]"
+                  endId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW.Paths[Flat File Source Output]"
+                  endId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW.Paths[Flat File Source Output1]"
+                  endId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Import securityEquals Data\Split securityEquals information"
+          DTS:CreationName="Microsoft.ExecuteProcess"
+          DTS:Description="Execute Process Task"
+          DTS:DTSID="{30458da6-a984-4004-b4d4-20eafff4757c}"
+          DTS:ExecutableType="Microsoft.ExecuteProcess"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Split securityEquals information"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecuteProcessData
+              Executable="C:\Users\bcmenic\Desktop\OrderValuesInAttributes\Published\OrderValuesInAttributes.exe"
+              Arguments="users_securityEquals Split local" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Import securityEquals Data.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{e98bc185-d433-4212-ae85-0582ade883ad}"
+          DTS:From="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Import securityEquals Data\Delete data from Remote SQL - Splited_Users_SecurityEquals Tables" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Import securityEquals Data.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{9cc71394-83a2-4aa4-b9f3-f92cb49b6f19}"
+          DTS:From="Package\Import securityEquals Data\Delete data from Remote SQL - Splited_Users_SecurityEquals Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Import securityEquals Data\Split securityEquals information" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Import securityEquals Data.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{BD73DF39-D057-449B-BA0A-BC67385C3402}"
+          DTS:From="Package\Import securityEquals Data\Split securityEquals information"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Import securityEquals Data\Delete data from Local SQL - Users_securityEquals Tables - Step 2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Import securityEquals Data.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{fce00896-5900-44a1-8049-a9eb9d2a6f0a}"
+          DTS:From="Package\Import securityEquals Data\Delete data from Local SQL - Users_securityEquals Tables - Step 1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="407,42"
+          Id="Package\Import securityEquals Data\Delete data from Local SQL - Users_securityEquals Tables - Step 1"
+          TopLeft="13,23" />
+        <NodeLayout
+          Size="407,42"
+          Id="Package\Import securityEquals Data\Delete data from Local SQL - Users_securityEquals Tables - Step 2"
+          TopLeft="18,348" />
+        <NodeLayout
+          Size="420,42"
+          Id="Package\Import securityEquals Data\Delete data from Remote SQL - Splited_Users_SecurityEquals Tables"
+          TopLeft="7,170" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW"
+          TopLeft="72,93" />
+        <NodeLayout
+          Size="233,42"
+          Id="Package\Import securityEquals Data\Split securityEquals information"
+          TopLeft="101,258" />
+        <EdgeLayout
+          Id="Package\Import securityEquals Data.PrecedenceConstraints[Constraint]"
+          TopLeft="218.25,135">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import securityEquals Data.PrecedenceConstraints[Constraint 1]"
+          TopLeft="217.25,212">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import securityEquals Data.PrecedenceConstraints[Constraint 2]"
+          TopLeft="219.5,300">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import securityEquals Data.PrecedenceConstraints[Constraint 3]"
+          TopLeft="218,65">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="437,445"
+          Size="437,488"
+          Id="Package\Import securityEquals Data"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="248,42"
+          Id="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals NEW"
+          TopLeft="339.5,37" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion OLD"
+          TopLeft="74,148" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW"
+          TopLeft="345,272.5" />
+        <NodeLayout
+          Size="251,42"
+          Id="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD"
+          TopLeft="46,279" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\Data Conversion NEW"
+          TopLeft="371,155" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\CSV - Users_SecurityEquals OLD"
+          TopLeft="43.5,38.5" />
+        <EdgeLayout
+          Id="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW.Paths[Flat File Source Output1]"
+          TopLeft="464.5,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76"
+              Start="0,0"
+              End="0,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW.Paths[Flat File Source Output]"
+          TopLeft="166.5,80.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67.5"
+              Start="0,0"
+              End="0,60">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW.Paths[Data Conversion Output1]"
+          TopLeft="467,197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,75.5"
+              Start="0,0"
+              End="0,68">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW.Paths[Data Conversion Output]"
+          TopLeft="169.25,190">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,89"
+              Start="0,0"
+              End="0,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals NEW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import securityEquals Data\Import Users_securityEquals OLD and NEW\SQL - Users_SecurityEquals - OLD">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

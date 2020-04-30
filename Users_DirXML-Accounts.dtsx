@@ -1,0 +1,1181 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/19/2019 2:12:28 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CAAWSD003"
+  DTS:CreatorName="VALENET\bcmenic"
+  DTS:DTSID="{AFCEE867-2DF7-4B1C-A1C2-279102137439}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{D9132D2A-4C2B-4C50-A7D3-187EDFDF5396}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).IAM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FDE179C2-6462-44A8-A974-EFC2C9C1E885}"
+      DTS:ObjectName="(local).IAM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=IAM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CAAWSD003.IAM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9FDF1280-C527-4B89-B667-9ECC5C0307BB}"
+      DTS:ObjectName="CAAWSD003.IAM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=CAAWSD003;Initial Catalog=IAM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Users DirXML-Accounts - NEW]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7C8CB60D-BBA3-497A-A1F9-6FB8DA45692C}"
+      DTS:ObjectName="Users DirXML-Accounts - NEW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\Users DirXML_Accounts\Users_DirXML_Accounts_NEW.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{CA9B3E7C-F88E-4C73-AB60-EA8C37B4BA39}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DirXML-Accounts"
+              DTS:DTSID="{5319A0B1-9198-4967-BC64-BF4A5140E0AC}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Users_DirXML-Accounts - OLD]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F9E5146E-68C9-445F-B38D-FFEE8580C4CA}"
+      DTS:ObjectName="Users_DirXML-Accounts - OLD">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\Users DirXML_Accounts\Users_DirXML_Accounts_OLD.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{85CB1018-DF9D-4AC1-B046-52BA4DE71576}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DirXML-Accounts"
+              DTS:DTSID="{8B7A60E4-6EB5-447B-A4E4-FA00B0E8D8A8}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Import Dir-XML-Accounts Data"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{b601dc7a-a20b-43f7-b576-3a59d79a5ae2}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Dir-XML-Accounts Data">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Import Dir-XML-Accounts Data\Delete data from Local SQL - Users_DirXML-Accounts Tables - Step 1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{fd8f455c-0848-4671-8813-eec75d54fb7e}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Local SQL - Users_DirXML-Accounts Tables - Step 1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FDE179C2-6462-44A8-A974-EFC2C9C1E885}"
+              SQLTask:SqlStatementSource="Delete from IAM.dbo.Users_DirXML_Accounts_OLD&#xA;&#xA;Delete from IAM.dbo.Users_DirXML_Accounts_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Import Dir-XML-Accounts Data\Delete data from Local SQL - Users_DirXML-AccountsTables - Step 2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5a1395bb-33e2-4405-b6fc-5e33159def8d}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Local SQL - Users_DirXML-AccountsTables - Step 2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FDE179C2-6462-44A8-A974-EFC2C9C1E885}"
+              SQLTask:SqlStatementSource="Delete from IAM.dbo.Users_DirXML_Accounts_OLD&#xA;&#xA;Delete from IAM.dbo.Users_DirXML_Accounts_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Import Dir-XML-Accounts Data\Delete data from Remote SQL - Splited_Users_DirXML-EntitlementRef Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0141be65-c16f-414a-aae2-36a787cc69a8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Remote SQL - Splited_Users_DirXML-EntitlementRef Tables"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FDE179C2-6462-44A8-A974-EFC2C9C1E885}"
+              SQLTask:SqlStatementSource="Delete from [iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com].IAM.dbo.Splited_Users_DirXML_Accounts_OLD&#xA;&#xA;Delete from [iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com].IAM.dbo.Splited_Users_DirXML_Accounts_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{2f273f05-b649-45ac-9760-84ccd2f0a2b2}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Users_DirXML-Accounts OLD and NEW"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - Users_DirXML_Accounts NEW"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Users DirXML-Accounts - NEW]"
+                      connectionManagerRefId="Package.ConnectionManagers[Users DirXML-Accounts - NEW]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="100"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Output].Columns[DirXML-Accounts]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Output].ExternalColumns[DirXML-Accounts]"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Output].Columns[DirXML-Accounts]"
+                          name="DirXML-Accounts"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Output].ExternalColumns[DirXML-Accounts]"
+                          codePage="1252"
+                          dataType="text"
+                          name="DirXML-Accounts" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - Users_DirXML_Accounts OLD"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Users_DirXML-Accounts - OLD]"
+                      connectionManagerRefId="Package.ConnectionManagers[Users_DirXML-Accounts - OLD]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="100"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Output].Columns[DirXML-Accounts]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Output].ExternalColumns[DirXML-Accounts]"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Output].Columns[DirXML-Accounts]"
+                          name="DirXML-Accounts"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="100"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Output].ExternalColumns[DirXML-Accounts]"
+                          codePage="1252"
+                          dataType="text"
+                          name="DirXML-Accounts" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion NEW"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input].Columns[DirXML-Accounts]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="DirXML-Accounts"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Output].Columns[DirXML-Accounts]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of DirXML-Accounts]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of DirXML-Accounts]"
+                          name="Copy of DirXML-Accounts"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Output].Columns[DirXML-Accounts]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion OLD"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input].Columns[DirXML-Accounts]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="DirXML-Accounts"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Output].Columns[DirXML-Accounts]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of DirXML-Accounts]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of DirXML-Accounts]"
+                          name="Copy of DirXML-Accounts"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Output].Columns[DirXML-Accounts]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - Users_DirXML_Accounts NEW"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Users_DirXML_Accounts_NEW]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[(local).IAM]"
+                      connectionManagerRefId="Package.ConnectionManagers[(local).IAM]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW.Inputs[OLE DB Destination Input].Columns[Copy of DirXML-Accounts]"
+                          cachedDataType="nText"
+                          cachedName="Copy of DirXML-Accounts"
+                          externalMetadataColumnId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW.Inputs[OLE DB Destination Input].ExternalColumns[DirXML_Accounts]"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of DirXML-Accounts]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="100"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW.Inputs[OLE DB Destination Input].ExternalColumns[DirXML_Accounts]"
+                          dataType="nText"
+                          name="DirXML_Accounts" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - Users_DirXML_Accounts OLD"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Users_DirXML_Accounts_OLD]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[(local).IAM]"
+                      connectionManagerRefId="Package.ConnectionManagers[(local).IAM]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD.Inputs[OLE DB Destination Input].Columns[Copy of DirXML-Accounts]"
+                          cachedDataType="nText"
+                          cachedName="Copy of DirXML-Accounts"
+                          externalMetadataColumnId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD.Inputs[OLE DB Destination Input].ExternalColumns[DirXML_Accounts]"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of DirXML-Accounts]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="100"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD.Inputs[OLE DB Destination Input].ExternalColumns[DirXML_Accounts]"
+                          dataType="nText"
+                          name="DirXML_Accounts" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW.Paths[Data Conversion Output]"
+                  endId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW.Paths[Data Conversion Output1]"
+                  endId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW.Paths[Flat File Source Output]"
+                  endId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW.Paths[Flat File Source Output1]"
+                  endId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Import Dir-XML-Accounts Data\Split DirXML-Accounts information"
+          DTS:CreationName="Microsoft.ExecuteProcess"
+          DTS:Description="Execute Process Task"
+          DTS:DTSID="{069633ed-16e7-4a8e-a5d9-2d76ffa0802a}"
+          DTS:ExecutableType="Microsoft.ExecuteProcess"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Split DirXML-Accounts information"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecuteProcessData
+              Executable="C:\Users\bcmenic\Desktop\OrderValuesInAttributes\Published\OrderValuesInAttributes.exe"
+              Arguments="Users_DirXML_Accounts Split local" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Import Dir-XML-Accounts Data.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{804541b9-36d1-485c-80e3-2df4508e839e}"
+          DTS:From="Package\Import Dir-XML-Accounts Data\Delete data from Local SQL - Users_DirXML-Accounts Tables - Step 1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Import Dir-XML-Accounts Data.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{bb050dca-7332-42f6-8fe4-6d6c2d6478a8}"
+          DTS:From="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Import Dir-XML-Accounts Data\Delete data from Remote SQL - Splited_Users_DirXML-EntitlementRef Tables" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Import Dir-XML-Accounts Data.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{a879c602-950e-42f5-bdd6-e955942ed35d}"
+          DTS:From="Package\Import Dir-XML-Accounts Data\Delete data from Remote SQL - Splited_Users_DirXML-EntitlementRef Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Import Dir-XML-Accounts Data\Split DirXML-Accounts information" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Import Dir-XML-Accounts Data.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{73f82516-eebe-43f5-9c1c-d7e7c51551c6}"
+          DTS:From="Package\Import Dir-XML-Accounts Data\Split DirXML-Accounts information"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Import Dir-XML-Accounts Data\Delete data from Local SQL - Users_DirXML-AccountsTables - Step 2" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="421,42"
+          Id="Package\Import Dir-XML-Accounts Data\Delete data from Local SQL - Users_DirXML-Accounts Tables - Step 1"
+          TopLeft="67,33" />
+        <NodeLayout
+          Size="419,42"
+          Id="Package\Import Dir-XML-Accounts Data\Delete data from Local SQL - Users_DirXML-AccountsTables - Step 2"
+          TopLeft="62,371" />
+        <NodeLayout
+          Size="459,42"
+          Id="Package\Import Dir-XML-Accounts Data\Delete data from Remote SQL - Splited_Users_DirXML-EntitlementRef Tables"
+          TopLeft="47,196" />
+        <NodeLayout
+          Size="309,42"
+          Id="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW"
+          TopLeft="116,123" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\Import Dir-XML-Accounts Data\Split DirXML-Accounts information"
+          TopLeft="152,275" />
+        <EdgeLayout
+          Id="Package\Import Dir-XML-Accounts Data.PrecedenceConstraints[Constraint]"
+          TopLeft="274,75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Dir-XML-Accounts Data.PrecedenceConstraints[Constraint 1]"
+          TopLeft="273.5,165">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Dir-XML-Accounts Data.PrecedenceConstraints[Constraint 2]"
+          TopLeft="276,238">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Dir-XML-Accounts Data.PrecedenceConstraints[Constraint 3]"
+          TopLeft="273.5,317">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="568,478"
+          Size="568,521"
+          Id="Package\Import Dir-XML-Accounts Data"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="263,42"
+          Id="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts NEW"
+          TopLeft="409,73" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion OLD"
+          TopLeft="132,175" />
+        <NodeLayout
+          Size="259,42"
+          Id="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD"
+          TopLeft="90,293" />
+        <NodeLayout
+          Size="262,42"
+          Id="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW"
+          TopLeft="411,293" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\Data Conversion NEW"
+          TopLeft="448,178" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\CSV - Users_DirXML_Accounts OLD"
+          TopLeft="88,73" />
+        <EdgeLayout
+          Id="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW.Paths[Flat File Source Output1]"
+          TopLeft="541.5,115">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW.Paths[Flat File Source Output]"
+          TopLeft="221.5,115">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW.Paths[Data Conversion Output1]"
+          TopLeft="542.25,220">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW.Paths[Data Conversion Output]"
+          TopLeft="222.25,217">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76"
+              Start="0,0"
+              End="0,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts OLD">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Dir-XML-Accounts Data\Import Users_DirXML-Accounts OLD and NEW\SQL - Users_DirXML_Accounts NEW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

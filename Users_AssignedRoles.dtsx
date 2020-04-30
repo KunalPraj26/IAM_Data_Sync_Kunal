@@ -1,0 +1,1194 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/24/2019 9:03:48 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CAAWSD003"
+  DTS:CreatorName="VALENET\bcmenic"
+  DTS:DTSID="{B587BA4F-6544-4D7E-A1A4-BEEC2773AA91}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Users_AssignedRoles"
+  DTS:PackageType="5"
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{5A6DBE66-A4BF-40E1-AE4C-8C6C4E11AAC8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).IAM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2148FCAA-6138-4221-ACCF-1FB3B12A2604}"
+      DTS:ObjectName="(local).IAM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=IAM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{44800128-B08B-47BC-890E-9F3FC549CC71}"
+      DTS:ObjectName="iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com;User ID=admin;Initial Catalog=IAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAale4kdt9/0i5HjcXVTwCigAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADcZhjQVZXr7lB4CdqZ43NtAAAAAASAAACgAAAAEAAAALvJOvqfMpMktlTuDZX6yuswAAAAoz86BAg71MB3NdubRZ5k27tPVz2aeawoe29P7EzuOR8aShXzXi6+C1xsiVKx5+vtFAAAAO/aybi0FUUdl6yXiYf/caK+6CVB</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Users AssignedRoles - NEW]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9DD660C5-8037-4292-9F51-AD2BEBB7812B}"
+      DTS:ObjectName="Users AssignedRoles - NEW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\Users nrfAssignedRoles\Users_nrfAssignedRoles_NEW.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{F34B2870-229A-47D3-8105-0EF47AC39520}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nrfAssignedRoles"
+              DTS:DTSID="{293249F2-F608-44C1-8D21-EC7FA2EFA7AF}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Users AssignedRoles - OLD]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{EBD5B868-B6D0-4FD4-A112-47BA9F921506}"
+      DTS:ObjectName="Users AssignedRoles - OLD">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\Users nrfAssignedRoles\Users_nrfAssignedRoles_OLD.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{A400D4ED-70AB-421B-AF10-A9DD8D86C685}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nrfAssignedRoles"
+              DTS:DTSID="{907AF779-1940-4D44-803A-2C66CC4A7D47}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Users nrfAssignedRoles"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{963032B9-5477-471F-99AB-27D5EBB8CA4A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Users nrfAssignedRoles">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Users nrfAssignedRoles\Delete data from Local SQL - Users_nrfAssignedRoles Tables - Step 1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{170e6330-7753-4649-b0f6-289ea364cc13}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Local SQL - Users_nrfAssignedRoles Tables - Step 1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{44800128-B08B-47BC-890E-9F3FC549CC71}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.STG_Users_Roles_IDV_OLD&#xA;&#xA;Truncate table IAM.dbo.STG_Users_Roles_IDV_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Users nrfAssignedRoles\Delete data from Local SQL - Users_nrfAssignedRoles Tables - Step 2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{00f7a190-f8e3-4a80-bb8a-1c22de297a63}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Local SQL - Users_nrfAssignedRoles Tables - Step 2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{44800128-B08B-47BC-890E-9F3FC549CC71}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.STG_Users_Roles_IDV_OLD&#xA;&#xA;Truncate table IAM.dbo.STG_Users_Roles_IDV_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Users nrfAssignedRoles\Delete data from Remote SQL - Splited_Users_nrfAssignedRoles Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{7cdedb43-1e21-475b-a353-81b5bcff4e7a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Remote SQL - Splited_Users_nrfAssignedRoles Tables"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{44800128-B08B-47BC-890E-9F3FC549CC71}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.Splited_Users_Roles_IDV_OLD&#xA;&#xA;Truncate table IAM.dbo.Splited_Users_Roles_IDV_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{FB58CE58-4829-45C3-9961-F1B229B6BE60}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Users_nrfAssignedRoles OLD and NEW"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - Users_AssignedRoles - NEW"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Users AssignedRoles - NEW]"
+                      connectionManagerRefId="Package.ConnectionManagers[Users AssignedRoles - NEW]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="200"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Output].Columns[nrfAssignedRoles]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Output].ExternalColumns[nrfAssignedRoles]"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Output].Columns[nrfAssignedRoles]"
+                          name="nrfAssignedRoles"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="200"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Output].ExternalColumns[nrfAssignedRoles]"
+                          codePage="1252"
+                          dataType="text"
+                          name="nrfAssignedRoles" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - Users_AssignedRoles OLD"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Users AssignedRoles - OLD]"
+                      connectionManagerRefId="Package.ConnectionManagers[Users AssignedRoles - OLD]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="200"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Output].Columns[nrfAssignedRoles]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Output].ExternalColumns[nrfAssignedRoles]"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Output].Columns[nrfAssignedRoles]"
+                          name="nrfAssignedRoles"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="200"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Output].ExternalColumns[nrfAssignedRoles]"
+                          codePage="1252"
+                          dataType="text"
+                          name="nrfAssignedRoles" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion NEW"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input].Columns[nrfAssignedRoles]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="nrfAssignedRoles"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Output].Columns[nrfAssignedRoles]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of nrfAssignedRoles]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of nrfAssignedRoles]"
+                          name="Copy of nrfAssignedRoles"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Output].Columns[nrfAssignedRoles]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion OLD"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input].Columns[nrfAssignedRoles]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="nrfAssignedRoles"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Output].Columns[nrfAssignedRoles]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of nrfAssignedRoles]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of nrfAssignedRoles]"
+                          name="Copy of nrfAssignedRoles"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Output].Columns[nrfAssignedRoles]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - Users_AssignedRoles NEW"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[STG_Users_Roles_IDV_NEW]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW.Inputs[OLE DB Destination Input].Columns[Copy of nrfAssignedRoles]"
+                          cachedDataType="nText"
+                          cachedName="Copy of nrfAssignedRoles"
+                          externalMetadataColumnId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW.Inputs[OLE DB Destination Input].ExternalColumns[nrfAssignedRoles]"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of nrfAssignedRoles]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="200"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW.Inputs[OLE DB Destination Input].ExternalColumns[nrfAssignedRoles]"
+                          dataType="nText"
+                          name="nrfAssignedRoles" />
+                        <externalMetadataColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW.Inputs[OLE DB Destination Input].ExternalColumns[nrfAssignedRoles_Equalized]"
+                          dataType="nText"
+                          name="nrfAssignedRoles_Equalized" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - Users_AssignedRoles OLD"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[STG_Users_Roles_IDV_OLD]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD.Inputs[OLE DB Destination Input].Columns[Copy of nrfAssignedRoles]"
+                          cachedDataType="nText"
+                          cachedName="Copy of nrfAssignedRoles"
+                          externalMetadataColumnId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD.Inputs[OLE DB Destination Input].ExternalColumns[nrfAssignedRoles]"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of nrfAssignedRoles]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="200"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD.Inputs[OLE DB Destination Input].ExternalColumns[nrfAssignedRoles]"
+                          dataType="nText"
+                          name="nrfAssignedRoles" />
+                        <externalMetadataColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD.Inputs[OLE DB Destination Input].ExternalColumns[nrfAssignedRoles_Equalized]"
+                          dataType="nText"
+                          name="nrfAssignedRoles_Equalized" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW.Paths[Data Conversion Output]"
+                  endId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW.Paths[Data Conversion Output1]"
+                  endId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW.Paths[Flat File Source Output]"
+                  endId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW.Paths[Flat File Source Output1]"
+                  endId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Users nrfAssignedRoles\Split nrfAssignedRoles information"
+          DTS:CreationName="Microsoft.ExecuteProcess"
+          DTS:Description="Execute Process Task"
+          DTS:DTSID="{f7b159db-bab6-417c-8d68-42d996a8e224}"
+          DTS:ExecutableType="Microsoft.ExecuteProcess"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Split nrfAssignedRoles information"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecuteProcessData
+              Executable="C:\Users\bcmenic\Desktop\OrderValuesInAttributes\Published\OrderValuesInAttributes.exe"
+              Arguments="Users_nrfAssignedRoles Split remote" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Users nrfAssignedRoles.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{4852EAD0-561B-43C7-8E2A-0E1C6E181EE8}"
+          DTS:From="Package\Users nrfAssignedRoles\Delete data from Local SQL - Users_nrfAssignedRoles Tables - Step 1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Users nrfAssignedRoles.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{EED477E7-EF4C-4C65-8B80-29622F16BEC2}"
+          DTS:From="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Users nrfAssignedRoles\Delete data from Remote SQL - Splited_Users_nrfAssignedRoles Tables" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Users nrfAssignedRoles.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{B932BCAF-AB60-48FB-ABF0-354D639915FE}"
+          DTS:From="Package\Users nrfAssignedRoles\Delete data from Remote SQL - Splited_Users_nrfAssignedRoles Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Users nrfAssignedRoles\Split nrfAssignedRoles information" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Users nrfAssignedRoles.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{5AE14BE4-4C23-441A-B005-DC46960FD4A0}"
+          DTS:From="Package\Users nrfAssignedRoles\Split nrfAssignedRoles information"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Users nrfAssignedRoles\Delete data from Local SQL - Users_nrfAssignedRoles Tables - Step 2" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="422,42"
+          Id="Package\Users nrfAssignedRoles\Delete data from Local SQL - Users_nrfAssignedRoles Tables - Step 1"
+          TopLeft="50,30" />
+        <NodeLayout
+          Size="422,42"
+          Id="Package\Users nrfAssignedRoles\Delete data from Local SQL - Users_nrfAssignedRoles Tables - Step 2"
+          TopLeft="54,361" />
+        <NodeLayout
+          Size="433,42"
+          Id="Package\Users nrfAssignedRoles\Delete data from Remote SQL - Splited_Users_nrfAssignedRoles Tables"
+          TopLeft="48,195" />
+        <NodeLayout
+          Size="310,42"
+          Id="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW"
+          TopLeft="105,108" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\Users nrfAssignedRoles\Split nrfAssignedRoles information"
+          TopLeft="148,273" />
+        <EdgeLayout
+          Id="Package\Users nrfAssignedRoles.PrecedenceConstraints[Constraint]"
+          TopLeft="260.5,72">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Users nrfAssignedRoles.PrecedenceConstraints[Constraint 1]"
+          TopLeft="262.25,150">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Users nrfAssignedRoles.PrecedenceConstraints[Constraint 2]"
+          TopLeft="268,237">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Users nrfAssignedRoles.PrecedenceConstraints[Constraint 3]"
+          TopLeft="268.25,315">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="538,463"
+          Size="538,506"
+          Id="Package\Users nrfAssignedRoles"
+          TopLeft="163,47" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="255,42"
+          Id="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles - NEW"
+          TopLeft="461,74" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion OLD"
+          TopLeft="190,179" />
+        <NodeLayout
+          Size="244,42"
+          Id="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD"
+          TopLeft="157,298" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW"
+          TopLeft="465,298" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\Data Conversion NEW"
+          TopLeft="498,179" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\CSV - Users_AssignedRoles OLD"
+          TopLeft="153,74" />
+        <EdgeLayout
+          Id="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW.Paths[Flat File Source Output1]"
+          TopLeft="590.5,116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW.Paths[Flat File Source Output]"
+          TopLeft="279.25,116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW.Paths[Data Conversion Output1]"
+          TopLeft="590.5,221">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77"
+              Start="0,0"
+              End="0,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW.Paths[Data Conversion Output]"
+          TopLeft="281,221">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77"
+              Start="0,0"
+              End="0,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles OLD">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Users nrfAssignedRoles\Import Users_nrfAssignedRoles OLD and NEW\SQL - Users_AssignedRoles NEW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

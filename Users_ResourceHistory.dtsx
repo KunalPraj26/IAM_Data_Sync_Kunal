@@ -1,0 +1,1204 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/13/2019 12:31:54 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CAAWSD003"
+  DTS:CreatorName="VALENET\bcmenic"
+  DTS:DTSID="{78F5695D-5DCA-430A-8388-FFEF76718591}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{949B334B-6CF3-47F0-80D7-88CFDAD9842C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).IAM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{EA32F5C0-DC64-4007-BFB0-D2036AEBACBC}"
+      DTS:ObjectName="(local).IAM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=IAM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B2B545F1-731C-4200-A685-A69A825AB6DF}"
+      DTS:ObjectName="iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com;User ID=admin;Initial Catalog=IAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArr5P3dMELUabwhws5ZNnqwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACxm4LHY4rBgDKHjEWClZynAAAAAASAAACgAAAAEAAAALAZpCh/lzsKzgtNvpRkOawwAAAA0QM9nTWO0rCK0vTxnMoArbku+cfCzpcJduE0uZl7A5GXe/ErjJGmizfZX1mZhm3UFAAAAEc2PrhvUHlDkBar4Q8fS6JT2kQf</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[nrfResourceHistory - NEW]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0BBF5320-C1F6-4682-B185-55558AF411BE}"
+      DTS:ObjectName="nrfResourceHistory - NEW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\Users nrfResourceHistory\Users_nrfResourceHistory_NEW.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="55"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{0D0960CF-51FB-4E3D-8B81-FA9CBF0D5CB9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nrfResourceHistory"
+              DTS:DTSID="{5D8F8175-8482-47B7-987D-746A20C4BD21}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[nrfResourceHistory - OLD]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{53A45D9A-6B5A-4260-B892-41A28BEF2458}"
+      DTS:ObjectName="nrfResourceHistory - OLD">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\Users nrfResourceHistory\Users_nrfResourceHistory_OLD.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="55"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{F41E8430-6DC6-4EAD-AC87-80D75AA017AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nrfResourceHistory"
+              DTS:DTSID="{599565B3-0A02-451A-AD9A-B39AAB89DB02}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Users nrfResourceHistory"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{50d83118-1841-4f4e-8ba6-6d2439cae083}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Users nrfResourceHistory">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Users nrfResourceHistory\Delete data from Local SQL - Users_nResourceHistory Tables - Step 1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{d8df2be7-acd4-4fb5-8b0a-c4fe2db00a5c}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Local SQL - Users_nResourceHistory Tables - Step 1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{EA32F5C0-DC64-4007-BFB0-D2036AEBACBC}"
+              SQLTask:SqlStatementSource="Delete from IAM.dbo.Users_ResourceHistory_IDV_OLD&#xA;&#xA;Delete from IAM.dbo.Users_ResourceHistory_IDV_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Users nrfResourceHistory\Delete data from Local SQL - Users_nrfResourceHistory Tables - Step 2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{cdbbb6ad-674b-4ad9-b9b2-c254fc196241}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Local SQL - Users_nrfResourceHistory Tables - Step 2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{EA32F5C0-DC64-4007-BFB0-D2036AEBACBC}"
+              SQLTask:SqlStatementSource="Delete from IAM.dbo.Users_ResourceHistory_IDV_OLD&#xA;&#xA;Delete from IAM.dbo.Users_ResourceHistory_IDV_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Users nrfResourceHistory\Delete data from Remote SQL - Splited_Users_nrfResourceHistory Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{089e6114-87a3-4d8e-a92d-30f6ec11afec}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Remote SQL - Splited_Users_nrfResourceHistory Tables"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B2B545F1-731C-4200-A685-A69A825AB6DF}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.Splited_Users_ResourceHistory_IDV_OLD&#xA;&#xA;Truncate table IAM.dbo.Splited_Users_ResourceHistory_IDV_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{0c06b232-b0af-41ff-8aa6-07dcdcb9c9a5}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Users_nrfResourceHistory OLD and NEW"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - Users_ResourceHistory NEW"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[nrfResourceHistory - NEW]"
+                      connectionManagerRefId="Package.ConnectionManagers[nrfResourceHistory - NEW]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="55"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Output].Columns[nrfResourceHistory]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Output].ExternalColumns[nrfResourceHistory]"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Output].Columns[nrfResourceHistory]"
+                          name="nrfResourceHistory"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="55"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Output].ExternalColumns[nrfResourceHistory]"
+                          codePage="1252"
+                          dataType="text"
+                          name="nrfResourceHistory" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - Users_ResourceHistory OLD"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[nrfResourceHistory - OLD]"
+                      connectionManagerRefId="Package.ConnectionManagers[nrfResourceHistory - OLD]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="55"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Output].Columns[nrfResourceHistory]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Output].ExternalColumns[nrfResourceHistory]"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Output].Columns[nrfResourceHistory]"
+                          name="nrfResourceHistory"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="55"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Output].ExternalColumns[nrfResourceHistory]"
+                          codePage="1252"
+                          dataType="text"
+                          name="nrfResourceHistory" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion NEW"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input].Columns[nrfResourceHistory]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="nrfResourceHistory"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Output].Columns[nrfResourceHistory]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of nrfResourceHistory]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of nrfResourceHistory]"
+                          name="Copy of nrfResourceHistory"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Output].Columns[nrfResourceHistory]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion OLD"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input].Columns[nrfResourceHistory]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="nrfResourceHistory"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Output].Columns[nrfResourceHistory]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of nrfResourceHistory]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of nrfResourceHistory]"
+                          name="Copy of nrfResourceHistory"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Output].Columns[nrfResourceHistory]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - Users_AssignedResources NEW"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Users_ResourceHistory_IDV_NEW]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[(local).IAM]"
+                      connectionManagerRefId="Package.ConnectionManagers[(local).IAM]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="55"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW.Inputs[OLE DB Destination Input].Columns[Copy of nrfResourceHistory]"
+                          cachedDataType="nText"
+                          cachedName="Copy of nrfResourceHistory"
+                          externalMetadataColumnId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW.Inputs[OLE DB Destination Input].ExternalColumns[nrfResourceHistory]"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of nrfResourceHistory]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="55"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW.Inputs[OLE DB Destination Input].ExternalColumns[nrfResourceHistory]"
+                          dataType="nText"
+                          name="nrfResourceHistory" />
+                        <externalMetadataColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW.Inputs[OLE DB Destination Input].ExternalColumns[matchingValues]"
+                          dataType="nText"
+                          name="matchingValues" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - Users_AssignedResources OLD"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Users_ResourceHistory_IDV_OLD]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[(local).IAM]"
+                      connectionManagerRefId="Package.ConnectionManagers[(local).IAM]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="55"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD.Inputs[OLE DB Destination Input].Columns[Copy of nrfResourceHistory]"
+                          cachedDataType="nText"
+                          cachedName="Copy of nrfResourceHistory"
+                          externalMetadataColumnId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD.Inputs[OLE DB Destination Input].ExternalColumns[nrfResourceHistory]"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of nrfResourceHistory]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="55"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD.Inputs[OLE DB Destination Input].ExternalColumns[nrfResourceHistory]"
+                          dataType="nText"
+                          name="nrfResourceHistory" />
+                        <externalMetadataColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD.Inputs[OLE DB Destination Input].ExternalColumns[matchingValues]"
+                          dataType="nText"
+                          name="matchingValues" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW.Paths[Data Conversion Output]"
+                  endId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW.Paths[Data Conversion Output1]"
+                  endId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW.Paths[Flat File Source Output]"
+                  endId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW.Paths[Flat File Source Output1]"
+                  endId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Users nrfResourceHistory\Split nrfResourceHistory information"
+          DTS:CreationName="Microsoft.ExecuteProcess"
+          DTS:Description="Execute Process Task"
+          DTS:DTSID="{1fd92d99-5771-495b-bfbd-5614b8077873}"
+          DTS:ExecutableType="Microsoft.ExecuteProcess"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Split nrfResourceHistory information"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecuteProcessData
+              Executable="C:\Users\bcmenic\Desktop\OrderValuesInAttributes\Published\OrderValuesInAttributes.exe"
+              Arguments="Users_nrfResourceHistory Users_nrfResourceHistory local &quot;C:\Users\bcmenic\Desktop\DataAnalysis\Users nrfResourceHistory\Users_nrfResourceHistory_OLD.csv&quot; &quot;C:\Users\bcmenic\Desktop\DataAnalysis\Users nrfResourceHistory\Users_nrfResourceHistory_NEW.csv&quot;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Users nrfResourceHistory.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{ae9e8252-8f75-420c-8dcc-b9a95b79e0ea}"
+          DTS:From="Package\Users nrfResourceHistory\Delete data from Local SQL - Users_nResourceHistory Tables - Step 1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Users nrfResourceHistory.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{857ab9c9-2412-4384-a4e7-68ca435abd79}"
+          DTS:From="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Users nrfResourceHistory\Delete data from Remote SQL - Splited_Users_nrfResourceHistory Tables" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Users nrfResourceHistory.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{2b619b54-92d4-4c54-95d8-e322c759425a}"
+          DTS:From="Package\Users nrfResourceHistory\Delete data from Remote SQL - Splited_Users_nrfResourceHistory Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Users nrfResourceHistory\Split nrfResourceHistory information" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Users nrfResourceHistory.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{a453baf2-3e83-4dec-a25f-939cd6c204c7}"
+          DTS:From="Package\Users nrfResourceHistory\Split nrfResourceHistory information"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Users nrfResourceHistory\Delete data from Local SQL - Users_nrfResourceHistory Tables - Step 2" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="423,42"
+          Id="Package\Users nrfResourceHistory\Delete data from Local SQL - Users_nResourceHistory Tables - Step 1"
+          TopLeft="52,27" />
+        <NodeLayout
+          Size="430,42"
+          Id="Package\Users nrfResourceHistory\Delete data from Local SQL - Users_nrfResourceHistory Tables - Step 2"
+          TopLeft="54,361" />
+        <NodeLayout
+          Size="441,42"
+          Id="Package\Users nrfResourceHistory\Delete data from Remote SQL - Splited_Users_nrfResourceHistory Tables"
+          TopLeft="47,192" />
+        <NodeLayout
+          Size="317,42"
+          Id="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW"
+          TopLeft="111,108" />
+        <NodeLayout
+          Size="255,42"
+          Id="Package\Users nrfResourceHistory\Split nrfResourceHistory information"
+          TopLeft="147,275" />
+        <EdgeLayout
+          Id="Package\Users nrfResourceHistory.PrecedenceConstraints[Constraint]"
+          TopLeft="266.5,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Users nrfResourceHistory.PrecedenceConstraints[Constraint 1]"
+          TopLeft="268.5,150">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Users nrfResourceHistory.PrecedenceConstraints[Constraint 2]"
+          TopLeft="271,234">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Users nrfResourceHistory.PrecedenceConstraints[Constraint 3]"
+          TopLeft="271.75,317">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="555,463"
+          Size="555,506"
+          Id="Package\Users nrfResourceHistory"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="256,42"
+          Id="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory NEW"
+          TopLeft="493,68" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion OLD"
+          TopLeft="194,176" />
+        <NodeLayout
+          Size="269,42"
+          Id="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD"
+          TopLeft="159,299" />
+        <NodeLayout
+          Size="272,42"
+          Id="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW"
+          TopLeft="499,293" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\Data Conversion NEW"
+          TopLeft="534,170" />
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\CSV - Users_ResourceHistory OLD"
+          TopLeft="153,74" />
+        <EdgeLayout
+          Id="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW.Paths[Flat File Source Output1]"
+          TopLeft="624.75,110">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW.Paths[Flat File Source Output]"
+          TopLeft="283.25,116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW.Paths[Data Conversion Output1]"
+          TopLeft="631.75,212">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81"
+              Start="0,0"
+              End="0,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW.Paths[Data Conversion Output]"
+          TopLeft="290.25,218">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81"
+              Start="0,0"
+              End="0,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources OLD">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Users nrfResourceHistory\Import Users_nrfResourceHistory OLD and NEW\SQL - Users_AssignedResources NEW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

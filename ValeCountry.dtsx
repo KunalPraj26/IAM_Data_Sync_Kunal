@@ -1,0 +1,1923 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/27/2019 11:25:38 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CAAWSD006"
+  DTS:CreatorName="VALENET\bcmenic"
+  DTS:DTSID="{D446BF5C-5CBC-49B7-AA55-F73ED92443A9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{54EE0AC1-7CC1-4530-9FEF-610DC0A6EF04}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).IAM 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1BB85E3D-9BE5-49F3-8140-5A8FFD4726E4}"
+      DTS:ObjectName="(local).IAM 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=IAM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV - ValeCountry - NEW]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{ec2c466d-61b1-4f54-a843-b3a022e3a9f4}"
+      DTS:ObjectName="CSV - ValeCountry - NEW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\ValeCountry\ValeCountry_NEW.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{CEA1A856-F0BE-4D5A-8D28-96EE0B1D037C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CN"
+              DTS:DTSID="{20124DDA-83F3-4BFF-96D7-1F3A0108C050}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ObjectClass"
+              DTS:DTSID="{D70CAE89-E32E-48BA-9D9B-44EFB2B3FD03}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeEmailAddress"
+              DTS:DTSID="{D0B62227-C5AF-42C1-B909-C74026AF36FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeGenericName"
+              DTS:DTSID="{891AFA20-F158-41F3-9816-9E441DE9D7B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeISOCountryCode"
+              DTS:DTSID="{3098FDEE-327A-412C-9003-0688AC2F4278}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeLocalizedName"
+              DTS:DTSID="{9412F44F-D095-447A-9FEA-33A393BE98BF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeParameters"
+              DTS:DTSID="{932E9C31-75E0-45FC-8E3F-66638B90AB9E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeParentLocation"
+              DTS:DTSID="{567FC0B3-74DD-4AC7-A922-FDD98F785916}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACL"
+              DTS:DTSID="{AE61B18F-BF18-4401-80C3-1C49208377B0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DirXML-Associations"
+              DTS:DTSID="{51D27AF3-BCB8-49BD-84C5-2873D303A2A3}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV - ValeCountry - OLD]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3AEEF443-132A-4985-8F1B-EE179A5DEF09}"
+      DTS:ObjectName="CSV - ValeCountry - OLD">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\ValeCountry\ValeCountry_OLD.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{240A8A9E-8CF0-48E4-B33D-641E15BF0BD4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CN"
+              DTS:DTSID="{2BA24D5F-9E4C-4782-887A-2BBFC39103C9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ObjectClass"
+              DTS:DTSID="{FE7DA8F9-1A16-4EA6-BFC0-B870874584DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeEmailAddress"
+              DTS:DTSID="{3F81D9F3-95B3-446D-9190-61FC0D992141}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeGenericName"
+              DTS:DTSID="{FDFC3E9D-F645-4D60-A832-8DEE7E97CB54}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeISOCountryCode"
+              DTS:DTSID="{A799A88A-3C31-411A-8D67-773CE4FC99CD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeLocalizedName"
+              DTS:DTSID="{AC41D4B2-E1F5-4229-9FC1-3A21FA0263E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeParameters"
+              DTS:DTSID="{4F9A11C3-7B51-4807-A569-E02A38884EE0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeParentLocation"
+              DTS:DTSID="{280956F4-663C-4D8C-B2B2-0DFA563E74EA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACL"
+              DTS:DTSID="{1B7B21CF-BAD8-4EBE-8540-34D633662B1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DirXML-Associations"
+              DTS:DTSID="{F5B4012F-9D94-432E-A58A-2BB0BA911C37}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{78387918-B40F-447D-B853-EE2C0B31A628}"
+      DTS:ObjectName="iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com;User ID=Admin;Initial Catalog=IAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO/MQobS/E0KD8KNapErTlAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD5x2R+PTmX2RRtkmBE2RqJAAAAAASAAACgAAAAEAAAACoN1QB9cmkpwmmCZ/dY+gAwAAAAswibh+LI8U4PGAqg2bmZcPw00xNI2EnkiteAm0v+5Twp3gqGou4feOXnYDc1/y2+FAAAABJBh/7WwFbDTjSy+76PeSa5CEhp</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{41db2c12-c2df-4db8-a6d8-da3a76dfed60}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data from Local SQL - ValeCountry - Step 2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{bda0be67-66dc-46eb-86a4-97d69e7f55e5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Local SQL - ValeCountry - Step 2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{78387918-B40F-447D-B853-EE2C0B31A628}"
+              SQLTask:SqlStatementSource="Delete from IAM.dbo.STG_ValeCountry_OLD&#xA;&#xA;Delete from IAM.dbo.STG_ValeCountry_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data SQL - ValeCountry"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{a78d8752-50f0-4909-8cf8-606641abe5d5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data SQL - ValeCountry"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{78387918-B40F-447D-B853-EE2C0B31A628}"
+              SQLTask:SqlStatementSource="Delete from IAM.dbo.STG_ValeCountry_OLD&#xA;&#xA;Delete from IAM.dbo.STG_ValeCountry_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data SQL - ValeCountry Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{dba18e91-3199-433f-a6c8-a6986b8504bf}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data SQL - ValeCountry Tables"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{78387918-B40F-447D-B853-EE2C0B31A628}"
+              SQLTask:SqlStatementSource="DELETE FROM  IAM.dbo.ValeCountry_OLD&#xA;&#xA;DELETE FROM  IAM.dbo.ValeCountry_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Equalize Data - DirXML-Associations"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{d78429e2-edc9-41af-8baa-f3dacf9bb9e2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Equalize Data - DirXML-Associations"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{78387918-B40F-447D-B853-EE2C0B31A628}"
+              SQLTask:SqlStatementSource="UPDATE [STG_ValeCountry_OLD]&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'DriverSetSync', 'DriverSet')&#xA;&#xA;UPDATE [STG_ValeCountry_OLD]&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'CURRIDV2IDV', 'IDV2IDV')&#xA;&#xA;UPDATE [[STG_ValeCountry_NEW]&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'NEWIDV2IDV', 'IDV2IDV')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Import ValeCountry OLD and NEW"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{07cd08ea-44e3-4b1b-af4f-e26696579e52}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import ValeCountry OLD and NEW"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - ValeCountry - NEW"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CSV - ValeCountry - NEW]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV - ValeCountry - NEW]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ACL]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ACL]"
+                          name="ACL"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          name="DirXML-Associations"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          name="ObjectClass"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[CN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[CN]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[CN]"
+                          name="CN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeGenericName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeGenericName]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeGenericName]"
+                          name="ValeGenericName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeLocalizedName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeLocalizedName]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeLocalizedName]"
+                          name="ValeLocalizedName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeParameters]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeParameters]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeParameters]"
+                          name="ValeParameters"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeEmailAddress]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeEmailAddress]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeEmailAddress]"
+                          name="ValeEmailAddress"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeISOCountryCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeISOCountryCode]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeISOCountryCode]"
+                          name="ValeISOCountryCode"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeParentLocation]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeParentLocation]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeParentLocation]"
+                          name="ValeParentLocation"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="200"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          dataType="wstr"
+                          length="200"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          dataType="wstr"
+                          length="200"
+                          name="DirXML-Associations" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[CN]"
+                          dataType="wstr"
+                          length="200"
+                          name="CN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeGenericName]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeGenericName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeLocalizedName]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeLocalizedName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeParameters]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeParameters" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeEmailAddress]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeEmailAddress" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeISOCountryCode]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeISOCountryCode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeParentLocation]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeParentLocation" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - ValeCountry - OLD"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CSV - ValeCountry - OLD]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV - ValeCountry - OLD]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ACL]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ACL]"
+                          name="ACL"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          name="DirXML-Associations"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          name="ObjectClass"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[CN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[CN]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[CN]"
+                          name="CN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeGenericName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeGenericName]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeGenericName]"
+                          name="ValeGenericName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeLocalizedName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeLocalizedName]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeLocalizedName]"
+                          name="ValeLocalizedName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeParameters]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeParameters]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeParameters]"
+                          name="ValeParameters"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeEmailAddress]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeEmailAddress]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeEmailAddress]"
+                          name="ValeEmailAddress"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeISOCountryCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeISOCountryCode]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeISOCountryCode]"
+                          name="ValeISOCountryCode"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeParentLocation]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeParentLocation]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeParentLocation]"
+                          name="ValeParentLocation"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="200"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          dataType="wstr"
+                          length="200"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          dataType="wstr"
+                          length="200"
+                          name="DirXML-Associations" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[CN]"
+                          dataType="wstr"
+                          length="200"
+                          name="CN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeGenericName]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeGenericName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeLocalizedName]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeLocalizedName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeParameters]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeParameters" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeEmailAddress]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeEmailAddress" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeISOCountryCode]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeISOCountryCode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeParentLocation]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeParentLocation" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - ValeCountry - NEW"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[STG_ValeCountry_NEW]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].Columns[DirXML-Associations]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="DirXML-Associations"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[DirXML-Associations]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].Columns[ObjectClass]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ObjectClass"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ObjectClass]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ObjectClass]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].Columns[ACL]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ACL"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ACL]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].Columns[CN]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="CN"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[CN]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[CN]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].Columns[ValeGenericName]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeGenericName"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeGenericName]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeGenericName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].Columns[ValeLocalizedName]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeLocalizedName"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeLocalizedName]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeLocalizedName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].Columns[ValeEmailAddress]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeEmailAddress"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeEmailAddress]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeEmailAddress]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].Columns[ValeISOCountryCode]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeISOCountryCode"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeISOCountryCode]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeISOCountryCode]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].Columns[ValeParameters]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeParameters"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeParameters]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeParameters]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].Columns[ValeParentLocation]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeParentLocation"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeParentLocation]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output].Columns[ValeParentLocation]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="200"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          dataType="wstr"
+                          length="200"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          dataType="wstr"
+                          length="200"
+                          name="DirXML-Associations" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[CN]"
+                          dataType="wstr"
+                          length="200"
+                          name="CN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeGenericName]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeGenericName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeLocalizedName]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeLocalizedName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeEmailAddress]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeEmailAddress" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeISOCountryCode]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeISOCountryCode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeParameters]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeParameters" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeParentLocation]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeParentLocation" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - ValeCountry - OLD"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[STG_ValeCountry_OLD]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].Columns[DirXML-Associations]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="DirXML-Associations"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[DirXML-Associations]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].Columns[ObjectClass]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ObjectClass"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ObjectClass]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ObjectClass]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].Columns[ACL]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ACL"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ACL]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].Columns[CN]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="CN"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[CN]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[CN]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].Columns[ValeGenericName]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeGenericName"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeGenericName]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeGenericName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].Columns[ValeLocalizedName]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeLocalizedName"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeLocalizedName]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeLocalizedName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].Columns[ValeEmailAddress]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeEmailAddress"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeEmailAddress]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeEmailAddress]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].Columns[ValeISOCountryCode]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeISOCountryCode"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeISOCountryCode]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeISOCountryCode]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].Columns[ValeParameters]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeParameters"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeParameters]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeParameters]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].Columns[ValeParentLocation]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeParentLocation"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeParentLocation]"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output].Columns[ValeParentLocation]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="200"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          dataType="wstr"
+                          length="200"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          dataType="wstr"
+                          length="200"
+                          name="DirXML-Associations" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[CN]"
+                          dataType="wstr"
+                          length="200"
+                          name="CN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeGenericName]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeGenericName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeLocalizedName]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeLocalizedName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeEmailAddress]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeEmailAddress" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeISOCountryCode]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeISOCountryCode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeParameters]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeParameters" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeParentLocation]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeParentLocation" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Import ValeCountry OLD and NEW.Paths[Flat File Source Output]"
+                  endId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Sequence Container\Import ValeCountry OLD and NEW.Paths[Flat File Source Output1]"
+                  endId="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Insert into Remote SQL - ValeCountry Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{84371390-4862-4d8f-a962-097d691d86c5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert into Remote SQL - ValeCountry Tables"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{78387918-B40F-447D-B853-EE2C0B31A628}"
+              SQLTask:SqlStatementSource="INSERT INTO IAM.dbo.ValeCountry_OLD&#xA;           ([DN]&#xA;           ,[CN]&#xA;           ,[ObjectClass]&#xA;           ,[ValeEmailAddress]&#xA;           ,[ValeGenericName]&#xA;           ,[ValeISOCountryCode]&#xA;           ,[ValeLocalizedName]&#xA;           ,[ValeParameters]&#xA;           ,[ValeParentLocation]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations])&#xA;SELECT&#xA;           [DN]&#xA;           ,[CN]&#xA;           ,[ObjectClass]&#xA;           ,[ValeEmailAddress]&#xA;           ,[ValeGenericName]&#xA;           ,[ValeISOCountryCode]&#xA;           ,[ValeLocalizedName]&#xA;           ,[ValeParameters]&#xA;           ,[ValeParentLocation]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations]&#xA;FROM IAM.dbo.STG_ValeCountry_OLD&#xA;&#xA;INSERT INTO IAM.dbo.ValeCountry_NEW&#xA;           ([DN]&#xA;           ,[CN]&#xA;           ,[ObjectClass]&#xA;           ,[ValeEmailAddress]&#xA;           ,[ValeGenericName]&#xA;           ,[ValeISOCountryCode]&#xA;           ,[ValeLocalizedName]&#xA;           ,[ValeParameters]&#xA;           ,[ValeParentLocation]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations])&#xA;SELECT&#xA;           [DN]&#xA;           ,[CN]&#xA;           ,[ObjectClass]&#xA;           ,[ValeEmailAddress]&#xA;           ,[ValeGenericName]&#xA;           ,[ValeISOCountryCode]&#xA;           ,[ValeLocalizedName]&#xA;           ,[ValeParameters]&#xA;           ,[ValeParentLocation]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations]&#xA;FROM IAM.dbo.STG_ValeCountry_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Sort ObjectClass"
+          DTS:CreationName="Microsoft.ExecuteProcess"
+          DTS:Description="Execute Process Task"
+          DTS:DTSID="{35fac121-0a62-4f9c-83fd-b198d3a385c3}"
+          DTS:ExecutableType="Microsoft.ExecuteProcess"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Sort ObjectClass"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecuteProcessData
+              Executable="C:\Users\bcmenic\Desktop\OrderValuesInAttributes\Published\OrderValuesInAttributes.exe"
+              Arguments="ValeCountry Sort remote" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{8a6d3279-8dda-4ba3-b401-b1f365b4724d}"
+          DTS:From="Package\Sequence Container\Delete data SQL - ValeCountry"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\Import ValeCountry OLD and NEW" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{416f21ca-983c-4609-9958-97e6f85b9612}"
+          DTS:From="Package\Sequence Container\Import ValeCountry OLD and NEW"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\Equalize Data - DirXML-Associations" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{2bbf30ca-45d8-4f1b-954b-c1e7dc9c1222}"
+          DTS:From="Package\Sequence Container\Equalize Data - DirXML-Associations"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Sequence Container\Delete data SQL - ValeCountry Tables" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{5e09ae65-e7b5-4117-b4fb-6c95c57cc795}"
+          DTS:From="Package\Sequence Container\Insert into Remote SQL - ValeCountry Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Sequence Container\Delete data from Local SQL - ValeCountry - Step 2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{af7c5895-9e5f-4f35-b915-d0d747b89d11}"
+          DTS:From="Package\Sequence Container\Delete data SQL - ValeCountry Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Sequence Container\Sort ObjectClass" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{a0c7dadc-0d3e-4cbc-84a9-0df6c958afe3}"
+          DTS:From="Package\Sequence Container\Sort ObjectClass"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Sequence Container\Insert into Remote SQL - ValeCountry Tables" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Sequence Container\Delete data SQL - ValeCountry"
+          TopLeft="111,23" />
+        <NodeLayout
+          Size="322,42"
+          Id="Package\Sequence Container\Delete data from Local SQL - ValeCountry - Step 2"
+          TopLeft="55,515" />
+        <NodeLayout
+          Size="266,42"
+          Id="Package\Sequence Container\Delete data SQL - ValeCountry Tables"
+          TopLeft="85,261" />
+        <NodeLayout
+          Size="259,42"
+          Id="Package\Sequence Container\Equalize Data - DirXML-Associations"
+          TopLeft="94,182" />
+        <NodeLayout
+          Size="249,42"
+          Id="Package\Sequence Container\Import ValeCountry OLD and NEW"
+          TopLeft="97,100" />
+        <NodeLayout
+          Size="300,42"
+          Id="Package\Sequence Container\Insert into Remote SQL - ValeCountry Tables"
+          TopLeft="68,421" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Sequence Container\Sort ObjectClass"
+          TopLeft="135,341" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="223.75,65">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="222.5,142">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="220.75,224">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="217,463">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
+          TopLeft="217,303">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 5]"
+          TopLeft="217,383">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="431,642"
+          Size="431,685"
+          Id="Package\Sequence Container"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Import ValeCountry OLD and NEW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="204,42"
+          Id="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - OLD"
+          TopLeft="206,85" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW"
+          TopLeft="479,271" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Sequence Container\Import ValeCountry OLD and NEW\CSV - ValeCountry - NEW"
+          TopLeft="474,85" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD"
+          TopLeft="211,271" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Import ValeCountry OLD and NEW.Paths[Flat File Source Output1]"
+          TopLeft="579.75,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,144"
+              Start="0,0"
+              End="0,136.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,136.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Import ValeCountry OLD and NEW.Paths[Flat File Source Output]"
+          TopLeft="310.25,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,144"
+              Start="0,0"
+              End="0,136.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,136.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - NEW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import ValeCountry OLD and NEW\SQL - ValeCountry - OLD">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

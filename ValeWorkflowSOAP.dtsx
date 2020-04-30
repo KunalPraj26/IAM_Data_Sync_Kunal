@@ -1,0 +1,1681 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/29/2019 5:55:03 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CAAWSD006"
+  DTS:CreatorName="VALENET\bcmenic"
+  DTS:DTSID="{9F2186F7-105A-490E-A9B3-1114D710321D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{C816439C-BC8D-4D1E-9D4A-31D9032DAE95}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV - ValeWorkflowSOAP - NEW]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{ef6b7413-cd56-4cdb-ab89-f076f25a279c}"
+      DTS:ObjectName="CSV - ValeWorkflowSOAP - NEW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\ValeWorkFlowSOAP\ValeWorkflowSOAP_NEW.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{E9E06A76-B51E-40F2-B779-042AFC7D30D3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CN"
+              DTS:DTSID="{3DC40C48-3ECD-47D4-9D03-714F123505F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ObjectClass"
+              DTS:DTSID="{3BCE59BF-F004-4AD0-A435-267C9DE73D8C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeWorkflowDebug"
+              DTS:DTSID="{FB314776-E2DE-4B26-AB91-CCB30813B327}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeWorkflowDN"
+              DTS:DTSID="{E0DA09B6-6AF4-40A2-B4EB-507E78F5FC06}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeWorkflowUserAppUrl"
+              DTS:DTSID="{71A87E3D-E226-4FA8-A3DE-3DAD396698E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACL"
+              DTS:DTSID="{0160C962-6FCD-418C-96C7-2C0439D50116}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DirXML-Associations"
+              DTS:DTSID="{6000307F-D420-4731-ABC5-E51D09B6F383}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV - ValeWorkflowSOAP - OLD]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3AEEF443-132A-4985-8F1B-EE179A5DEF09}"
+      DTS:ObjectName="CSV - ValeWorkflowSOAP - OLD">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\ValeWorkFlowSOAP\ValeWorkflowSOAP_OLD.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{3B538119-B479-4E45-BDC8-37F045495D98}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CN"
+              DTS:DTSID="{495BC6F0-41A4-40A0-9D66-09252976216F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ObjectClass"
+              DTS:DTSID="{96A78E13-8AB4-4DCF-9E16-D05ACAD34C36}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeWorkflowDebug"
+              DTS:DTSID="{A1A766B3-60A0-4540-8130-D3F0BB104472}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeWorkflowDN"
+              DTS:DTSID="{F0C2F178-1787-4DCB-8472-8B80BE9F402D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeWorkflowUserAppUrl"
+              DTS:DTSID="{B988436B-0D15-492C-B5A1-1CF8FD3B700A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACL"
+              DTS:DTSID="{D0BEAD9C-3C1D-4CFB-B290-BA367FDDDB70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DirXML-Associations"
+              DTS:DTSID="{791D9350-04DE-4661-B0EF-8E68BA238FBD}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CB726CE6-8BEC-4C38-A74F-039791899079}"
+      DTS:ObjectName="iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com;User ID=Admin;Initial Catalog=IAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO/MQobS/E0KD8KNapErTlAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACNP5rxs11MwCQO2IpRnh6rAAAAAASAAACgAAAAEAAAAKISN6YSTVvHt17TwwDgnREwAAAAAwjfrf+xTl/wAehfXn4axEjSsJrGRrEIN/CCS0mjr0XBKMTZuUlycdEqzXqCj4EjFAAAAPMLZCKDL4xdzMO8X3m/Ppn9lh/j</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{d60aa10d-24d7-46c6-b64d-cd69d65ae4f6}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data SQL - ValeWorkflowSOAP"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{76101133-cc75-4539-b846-b2fa525dea64}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data SQL - ValeWorkflowSOAP"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CB726CE6-8BEC-4C38-A74F-039791899079}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.STG_ValeWorkflowSOAP_OLD&#xA;&#xA;Truncate table IAM.dbo.STG_ValeWorkflowSOAP_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data SQL - ValeWorkflowSOAP 2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{74a64dbf-9f73-482b-b0a8-f7b0eda0c931}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data SQL - ValeWorkflowSOAP 2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CB726CE6-8BEC-4C38-A74F-039791899079}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.STG_ValeWorkflowSOAP_OLD&#xA;&#xA;Truncate table IAM.dbo.STG_ValeWorkflowSOAP_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data SQL - ValeWorkflowSOAP Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{d388539c-69cb-4bbc-b908-f269bd2d18f9}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data SQL - ValeWorkflowSOAP Tables"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CB726CE6-8BEC-4C38-A74F-039791899079}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.ValeWorkflowSOAP_OLD&#xA;&#xA;Truncate table IAM.dbo.ValeWorkflowSOAP_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Equalize Data - DirXML-Associations"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ee5245ec-ad75-400e-bacf-6b63834b0544}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Equalize Data - DirXML-Associations"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CB726CE6-8BEC-4C38-A74F-039791899079}"
+              SQLTask:SqlStatementSource="UPDATE [STG_ValeWorkflowSOAP_OLD]&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'DriverSetSync', 'DriverSet')&#xA;&#xA;UPDATE [STG_ValeWorkflowSOAP_OLD]&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'CURRIDV2IDV', 'IDV2IDV')&#xA;&#xA;UPDATE [STG_ValeWorkflowSOAP_NEW]&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'NEWIDV2IDV', 'IDV2IDV')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Equalize Data - ValeWorkflowDN"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{a48308e4-4a83-4a5b-a4c1-f373ee8c817d}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Equalize Data - ValeWorkflowDN"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CB726CE6-8BEC-4C38-A74F-039791899079}"
+              SQLTask:SqlStatementSource="UPDATE [STG_ValeWorkflowSOAP_OLD]&#xA;SET ValeWorkflowDN = REPLACE(ValeWorkflowDN, 'Vale_IDV_DR_SET', 'DriverSet')&#xA;&#xA;UPDATE [STG_ValeWorkflowSOAP_OLD]&#xA;SET ValeWorkflowDN = REPLACE(ValeWorkflowDN, 'User Application','UserApplication')&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{2ea0e39d-f24d-4dc5-9c8a-cb82b839b5cb}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import ValeWorkflowSOAP OLD and NEW"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - ValeWorkflowSOAP - NEW"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CSV - ValeWorkflowSOAP - NEW]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV - ValeWorkflowSOAP - NEW]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[ACL]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[ACL]"
+                          name="ACL"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          name="DirXML-Associations"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          name="ObjectClass"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[CN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].ExternalColumns[CN]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[CN]"
+                          name="CN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[ValeWorkflowDebug]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeWorkflowDebug]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[ValeWorkflowDebug]"
+                          name="ValeWorkflowDebug"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[ValeWorkflowDN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeWorkflowDN]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[ValeWorkflowDN]"
+                          name="ValeWorkflowDN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[ValeWorkflowUserAppUrl]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeWorkflowUserAppUrl]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[ValeWorkflowUserAppUrl]"
+                          name="ValeWorkflowUserAppUrl"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="200"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          dataType="wstr"
+                          length="200"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          dataType="wstr"
+                          length="200"
+                          name="DirXML-Associations" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].ExternalColumns[CN]"
+                          dataType="wstr"
+                          length="200"
+                          name="CN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeWorkflowDebug]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeWorkflowDebug" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeWorkflowDN]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeWorkflowDN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeWorkflowUserAppUrl]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeWorkflowUserAppUrl" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - ValeWorkflowSOAP - OLD"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CSV - ValeWorkflowSOAP - OLD]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV - ValeWorkflowSOAP - OLD]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[ACL]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[ACL]"
+                          name="ACL"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          name="DirXML-Associations"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          name="ObjectClass"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[CN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].ExternalColumns[CN]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[CN]"
+                          name="CN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[ValeWorkflowDebug]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeWorkflowDebug]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[ValeWorkflowDebug]"
+                          name="ValeWorkflowDebug"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[ValeWorkflowDN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeWorkflowDN]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[ValeWorkflowDN]"
+                          name="ValeWorkflowDN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[ValeWorkflowUserAppUrl]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeWorkflowUserAppUrl]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[ValeWorkflowUserAppUrl]"
+                          name="ValeWorkflowUserAppUrl"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="200"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          dataType="wstr"
+                          length="200"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          dataType="wstr"
+                          length="200"
+                          name="DirXML-Associations" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].ExternalColumns[CN]"
+                          dataType="wstr"
+                          length="200"
+                          name="CN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeWorkflowDebug]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeWorkflowDebug" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeWorkflowDN]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeWorkflowDN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeWorkflowUserAppUrl]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeWorkflowUserAppUrl" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - ValeWorkflowSOAP - NEW"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[STG_ValeWorkflowSOAP_NEW]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].Columns[DirXML-Associations]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="DirXML-Associations"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[DirXML-Associations]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].Columns[ObjectClass]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ObjectClass"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ObjectClass]"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[ObjectClass]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].Columns[ACL]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ACL"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[ACL]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].Columns[CN]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="CN"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].ExternalColumns[CN]"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[CN]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].Columns[ValeWorkflowDebug]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeWorkflowDebug"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeWorkflowDebug]"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[ValeWorkflowDebug]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].Columns[ValeWorkflowDN]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeWorkflowDN"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeWorkflowDN]"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[ValeWorkflowDN]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].Columns[ValeWorkflowUserAppUrl]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeWorkflowUserAppUrl"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeWorkflowUserAppUrl]"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output].Columns[ValeWorkflowUserAppUrl]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="200"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          dataType="wstr"
+                          length="200"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          dataType="wstr"
+                          length="200"
+                          name="DirXML-Associations" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].ExternalColumns[CN]"
+                          dataType="wstr"
+                          length="200"
+                          name="CN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeWorkflowDebug]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeWorkflowDebug" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeWorkflowDN]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeWorkflowDN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeWorkflowUserAppUrl]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeWorkflowUserAppUrl" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - ValeWorkflowSOAP - OLD"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[STG_ValeWorkflowSOAP_OLD]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].Columns[DirXML-Associations]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="DirXML-Associations"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[DirXML-Associations]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].Columns[ObjectClass]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ObjectClass"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ObjectClass]"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[ObjectClass]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].Columns[ACL]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ACL"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[ACL]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].Columns[CN]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="CN"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].ExternalColumns[CN]"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[CN]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].Columns[ValeWorkflowDebug]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeWorkflowDebug"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeWorkflowDebug]"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[ValeWorkflowDebug]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].Columns[ValeWorkflowDN]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeWorkflowDN"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeWorkflowDN]"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[ValeWorkflowDN]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].Columns[ValeWorkflowUserAppUrl]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeWorkflowUserAppUrl"
+                          externalMetadataColumnId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeWorkflowUserAppUrl]"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output].Columns[ValeWorkflowUserAppUrl]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="200"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          dataType="wstr"
+                          length="200"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          dataType="wstr"
+                          length="200"
+                          name="DirXML-Associations" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].ExternalColumns[CN]"
+                          dataType="wstr"
+                          length="200"
+                          name="CN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeWorkflowDebug]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeWorkflowDebug" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeWorkflowDN]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeWorkflowDN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeWorkflowUserAppUrl]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeWorkflowUserAppUrl" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW.Paths[Flat File Source Output]"
+                  endId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW.Paths[Flat File Source Output1]"
+                  endId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Insert into SQL - ValeWorkflowSOAP Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{559777cd-d03e-46e0-8a72-944180877607}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert into SQL - ValeWorkflowSOAP Tables"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CB726CE6-8BEC-4C38-A74F-039791899079}"
+              SQLTask:SqlStatementSource="INSERT INTO IAM.dbo.ValeWorkflowSOAP_OLD&#xA;           ([DN]&#xA;           ,[CN]&#xA;           ,[ObjectClass]&#xA;           ,[ValeWorkflowDebug]&#xA;           ,[ValeWorkflowDN]&#xA;           ,[ValeWorkflowUserAppUrl]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations])&#xA;SELECT&#xA;          [DN]&#xA;           ,[CN]&#xA;           ,[ObjectClass]&#xA;           ,[ValeWorkflowDebug]&#xA;           ,[ValeWorkflowDN]&#xA;           ,[ValeWorkflowUserAppUrl]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations]&#xA;FROM IAM.dbo.STG_ValeWorkflowSOAP_OLD&#xA;&#xA;INSERT INTO IAM.dbo.ValeWorkflowSOAP_NEW&#xA;           ([DN]&#xA;           ,[CN]&#xA;           ,[ObjectClass]&#xA;           ,[ValeWorkflowDebug]&#xA;           ,[ValeWorkflowDN]&#xA;           ,[ValeWorkflowUserAppUrl]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations])&#xA;SELECT&#xA;          [DN]&#xA;           ,[CN]&#xA;           ,[ObjectClass]&#xA;           ,[ValeWorkflowDebug]&#xA;           ,[ValeWorkflowDN]&#xA;           ,[ValeWorkflowUserAppUrl]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations]&#xA;FROM IAM.dbo.STG_ValeWorkflowSOAP_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Sort ObjectClass"
+          DTS:CreationName="Microsoft.ExecuteProcess"
+          DTS:Description="Execute Process Task"
+          DTS:DTSID="{eb8d8092-1ef3-4edb-9bdd-0ee1c122e33d}"
+          DTS:ExecutableType="Microsoft.ExecuteProcess"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Sort ObjectClass"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecuteProcessData
+              Executable="C:\Users\bcmenic\Desktop\OrderValuesInAttributes\Published\OrderValuesInAttributes.exe"
+              Arguments="ValeWorkflowSOAP Sort remote" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{c5a4b749-f3db-4e3f-884e-5684653b03c6}"
+          DTS:From="Package\Sequence Container\Delete data SQL - ValeWorkflowSOAP"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{675e7a37-cfe9-40dd-bb65-679f29d77d05}"
+          DTS:From="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\Equalize Data - DirXML-Associations" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{38E9E081-8F7A-4A27-9AEF-413C7CF59522}"
+          DTS:From="Package\Sequence Container\Equalize Data - DirXML-Associations"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Sequence Container\Equalize Data - ValeWorkflowDN" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{63fde20f-62de-4646-b5a7-50f28bde180c}"
+          DTS:From="Package\Sequence Container\Insert into SQL - ValeWorkflowSOAP Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Sequence Container\Delete data SQL - ValeWorkflowSOAP 2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{ca69c7a6-d037-498a-a6c6-9bbcf1979c84}"
+          DTS:From="Package\Sequence Container\Delete data SQL - ValeWorkflowSOAP Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Sequence Container\Sort ObjectClass" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{33609dcf-c768-4eda-8a7d-a530d2b9f80d}"
+          DTS:From="Package\Sequence Container\Sort ObjectClass"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Sequence Container\Insert into SQL - ValeWorkflowSOAP Tables" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{E7B93924-5156-466C-AB3D-31BB3E2DCAF4}"
+          DTS:From="Package\Sequence Container\Equalize Data - ValeWorkflowDN"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\Sequence Container\Delete data SQL - ValeWorkflowSOAP Tables" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="268,42"
+          Id="Package\Sequence Container\Delete data SQL - ValeWorkflowSOAP"
+          TopLeft="107,25" />
+        <NodeLayout
+          Size="277,42"
+          Id="Package\Sequence Container\Delete data SQL - ValeWorkflowSOAP 2"
+          TopLeft="102.714285714286,581.571428571428" />
+        <NodeLayout
+          Size="304,42"
+          Id="Package\Sequence Container\Delete data SQL - ValeWorkflowSOAP Tables"
+          TopLeft="96,334.571428571429" />
+        <NodeLayout
+          Size="259,42"
+          Id="Package\Sequence Container\Equalize Data - DirXML-Associations"
+          TopLeft="116.285714285714,183" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\Sequence Container\Equalize Data - ValeWorkflowDN"
+          TopLeft="127.285714285714,255.285714285714" />
+        <NodeLayout
+          Size="286,42"
+          Id="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW"
+          TopLeft="97,100" />
+        <NodeLayout
+          Size="296,42"
+          Id="Package\Sequence Container\Insert into SQL - ValeWorkflowSOAP Tables"
+          TopLeft="90,501.571428571428" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Sequence Container\Sort ObjectClass"
+          TopLeft="162.142857142857,422.428571428571" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="240.5,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="242.892857142857,142">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="246.535714285714,225">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.2857142857143"
+              Start="0,0"
+              End="0,22.7857142857143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.7857142857143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="239.607142857143,543.571428571428">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
+          TopLeft="245.571428571428,376.571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.857142857142"
+              Start="0,0"
+              End="0,38.357142857142">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.357142857142" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 5]"
+          TopLeft="240.571428571428,464.428571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.142857142857"
+              Start="0,0"
+              End="0,29.642857142857">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.642857142857" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 6]"
+          TopLeft="247.642857142857,297.285714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.285714285715"
+              Start="0,0"
+              End="0,29.785714285715">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.785714285715" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="517,691"
+          Size="517,734"
+          Id="Package\Sequence Container"
+          TopLeft="60,59" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="241,42"
+          Id="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD"
+          TopLeft="199,270" />
+        <NodeLayout
+          Size="244,42"
+          Id="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - NEW"
+          TopLeft="564,84" />
+        <NodeLayout
+          Size="241,42"
+          Id="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\CSV - ValeWorkflowSOAP - OLD"
+          TopLeft="205,88" />
+        <NodeLayout
+          Size="244,42"
+          Id="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW"
+          TopLeft="565,266" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW.Paths[Flat File Source Output1]"
+          TopLeft="686.5,126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,140"
+              Start="0,0"
+              End="0,132.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,132.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW.Paths[Flat File Source Output]"
+          TopLeft="322.5,130">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,140"
+              Start="0,0"
+              End="0,132.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,132.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - OLD">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import ValeWorkflowSOAP OLD and NEW\SQL - ValeWorkflowSOAP - NEW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

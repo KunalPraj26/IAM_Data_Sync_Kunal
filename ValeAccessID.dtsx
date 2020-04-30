@@ -1,0 +1,1545 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/26/2019 11:44:29 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CAAWSD006"
+  DTS:CreatorName="VALENET\bcmenic"
+  DTS:DTSID="{85D6409C-C3AD-4902-984E-BA54BA593B56}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{533EDF44-0A1D-4723-A463-59917783DFD8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).IAM 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1BB85E3D-9BE5-49F3-8140-5A8FFD4726E4}"
+      DTS:ObjectName="(local).IAM 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=IAM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV - ValeAccessID - NEW]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9610db23-f98e-4157-ad08-638f0c612e10}"
+      DTS:ObjectName="CSV - ValeAccessID - NEW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\ValeAccessID\ValeAccessID_NEW.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{7D09F93F-44B3-46C9-8292-379B83FCEF84}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ObjectClass"
+              DTS:DTSID="{C1CA112E-C78F-4506-B0B6-A40FFB16DE71}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CN"
+              DTS:DTSID="{55E6E124-4AAB-4864-ACD1-A5A63FF0FF71}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeRemoteHost"
+              DTS:DTSID="{B1FB3694-79AA-4EAB-8FCC-C1B015679986}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeSourceID"
+              DTS:DTSID="{D9DA2FE7-E02D-4AFE-87F8-4DF1D7C4B3AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACL"
+              DTS:DTSID="{6EDA7B76-B05B-4456-81C8-281AAB7750B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DirXML-Associations"
+              DTS:DTSID="{FF12DADA-9F5C-4445-A376-12AA6EA5B9D2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV - ValeAccessID - OLD]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3AEEF443-132A-4985-8F1B-EE179A5DEF09}"
+      DTS:ObjectName="CSV - ValeAccessID - OLD">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\ValeAccessID\ValeAccessID_OLD.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{003C1819-BDE3-49DC-B0F5-269098508B9B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ObjectClass"
+              DTS:DTSID="{D5C46982-11D2-437E-98B6-FC1507EFF840}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CN"
+              DTS:DTSID="{DE890E35-182B-4B74-BAAA-84F87F134FD2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeRemoteHost"
+              DTS:DTSID="{88BACD83-F2E1-4E68-BD8B-475CA2FDDD29}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeSourceID"
+              DTS:DTSID="{F0FD1881-41BF-4BF5-A97A-1EEECF4C3D38}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACL"
+              DTS:DTSID="{760CB197-8FBE-45E9-92B2-3250E9DA5CB6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DirXML-Associations"
+              DTS:DTSID="{045BBC02-E41C-45F6-9795-D85D6211F2D2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{232715FE-EC3E-4F45-9760-F633EAEC2F68}"
+      DTS:ObjectName="iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com;User ID=admin;Initial Catalog=IAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO/MQobS/E0KD8KNapErTlAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAstknKdVitSD7tP/5NYyZ7AAAAAASAAACgAAAAEAAAAMuNEDKZig5m0j5lvQZmjD4wAAAAy0VqrRVRTN5rf6vliFUpLgIhZHlExT3jBxUjw+ZgKto/zaK4J+kH8Mgh3ia+xsDrFAAAAPR7wYfdg70AWRRgadXxjyG7/Kpv</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{20698a50-8f1e-4c50-afb5-7b8c1cc0a5d9}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data from - STG_ValeAccessID - Step 1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1b5d29b4-9479-4b25-b668-12bf0f6cd1a3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from - STG_ValeAccessID - Step 1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{232715FE-EC3E-4F45-9760-F633EAEC2F68}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.STG_ValeAccessID_OLD&#xA;&#xA;Truncate table IAM.dbo.STG_ValeAccessID_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data from Remote SQL - ValeAccessID Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{4537afb3-d494-4e2a-9fdc-6ceea94d6bb1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Remote SQL - ValeAccessID Tables"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{232715FE-EC3E-4F45-9760-F633EAEC2F68}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.ValeAccessID_OLD&#xA;&#xA;Truncate table IAM.dbo.ValeAccessID_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data from STG_ValeAccessID - Step 2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{82f3a27f-e2e7-46c1-9113-efc8536e91e7}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from STG_ValeAccessID - Step 2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{232715FE-EC3E-4F45-9760-F633EAEC2F68}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.STG_ValeAccessID_OLD&#xA;&#xA;Truncate table IAM.dbo.STG_ValeAccessID_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Equalize Data - DirXML-Associations"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{bc850524-7710-48f1-bac4-41a4f4e9ff5a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Equalize Data - DirXML-Associations"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{232715FE-EC3E-4F45-9760-F633EAEC2F68}"
+              SQLTask:SqlStatementSource="UPDATE [STG_ValeAccessID_OLD]&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'DriverSetSync', 'DriverSet')&#xA;&#xA;UPDATE [STG_ValeAccessID_OLD]&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'CURRIDV2IDV', 'IDV2IDV')&#xA;&#xA;UPDATE [STG_ValeAccessID_NEW]&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'NEWIDV2IDV', 'IDV2IDV')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{ad498d3c-ed2f-4808-b280-a4d4484a1c6f}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import STG_ValeAccessID OLD and NEW"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - ValeAccessID - NEW"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CSV - ValeAccessID - NEW]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV - ValeAccessID - NEW]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[ACL]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[ACL]"
+                          name="ACL"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          name="DirXML-Associations"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          name="ObjectClass"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[CN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].ExternalColumns[CN]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[CN]"
+                          name="CN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[ValeRemoteHost]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeRemoteHost]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[ValeRemoteHost]"
+                          name="ValeRemoteHost"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[ValeSourceID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeSourceID]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[ValeSourceID]"
+                          name="ValeSourceID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="200"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          dataType="wstr"
+                          length="200"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          dataType="wstr"
+                          length="200"
+                          name="DirXML-Associations" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].ExternalColumns[CN]"
+                          dataType="wstr"
+                          length="200"
+                          name="CN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeRemoteHost]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeRemoteHost" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].ExternalColumns[ValeSourceID]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeSourceID" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - ValeAccessID - OLD"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CSV - ValeAccessID - OLD]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV - ValeAccessID - OLD]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[ACL]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[ACL]"
+                          name="ACL"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          name="DirXML-Associations"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          name="ObjectClass"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[CN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].ExternalColumns[CN]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[CN]"
+                          name="CN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[ValeRemoteHost]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeRemoteHost]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[ValeRemoteHost]"
+                          name="ValeRemoteHost"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[ValeSourceID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeSourceID]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[ValeSourceID]"
+                          name="ValeSourceID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="200"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          dataType="wstr"
+                          length="200"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          dataType="wstr"
+                          length="200"
+                          name="DirXML-Associations" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].ExternalColumns[CN]"
+                          dataType="wstr"
+                          length="200"
+                          name="CN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeRemoteHost]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeRemoteHost" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].ExternalColumns[ValeSourceID]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeSourceID" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - ValeAccessID - NEW"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[STG_ValeAccessID_NEW]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].Columns[DirXML-Associations]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="DirXML-Associations"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[DirXML-Associations]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].Columns[ObjectClass]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ObjectClass"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ObjectClass]"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[ObjectClass]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].Columns[CN]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="CN"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].ExternalColumns[Cn]"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[CN]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].Columns[ValeRemoteHost]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeRemoteHost"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeRemoteHost]"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[ValeRemoteHost]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].Columns[ValeSourceID]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeSourceID"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeSourceID]"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[ValeSourceID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].Columns[ACL]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ACL"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output].Columns[ACL]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="200"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          dataType="wstr"
+                          length="200"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          dataType="wstr"
+                          length="200"
+                          name="DirXML-Associations" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].ExternalColumns[Cn]"
+                          dataType="wstr"
+                          length="200"
+                          name="Cn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeRemoteHost]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeRemoteHost" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeSourceID]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeSourceID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - ValeAccessID - OLD"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[STG_ValeAccessID_OLD]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].Columns[DirXML-Associations]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="DirXML-Associations"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[DirXML-Associations]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].Columns[ObjectClass]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ObjectClass"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ObjectClass]"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[ObjectClass]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].Columns[CN]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="CN"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].ExternalColumns[Cn]"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[CN]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].Columns[ValeRemoteHost]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeRemoteHost"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeRemoteHost]"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[ValeRemoteHost]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].Columns[ValeSourceID]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeSourceID"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeSourceID]"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[ValeSourceID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].Columns[ACL]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ACL"
+                          externalMetadataColumnId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output].Columns[ACL]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DN]"
+                          dataType="wstr"
+                          length="200"
+                          name="DN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          dataType="wstr"
+                          length="200"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          dataType="wstr"
+                          length="200"
+                          name="DirXML-Associations" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].ExternalColumns[Cn]"
+                          dataType="wstr"
+                          length="200"
+                          name="Cn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeRemoteHost]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeRemoteHost" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeSourceID]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeSourceID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW.Paths[Flat File Source Output]"
+                  endId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW.Paths[Flat File Source Output1]"
+                  endId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Insert into Remote SQL - ValeAccessID Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{c1c81673-9da3-42ed-be25-9b0ccf052ca9}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert into Remote SQL - ValeAccessID Tables"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{232715FE-EC3E-4F45-9760-F633EAEC2F68}"
+              SQLTask:SqlStatementSource="INSERT INTO IAM.dbo.ValeAccessID_OLD&#xA;           ([DN]&#xA;           ,[ObjectClass]&#xA;           ,[Cn]&#xA;           ,[ValeRemoteHost]&#xA;           ,[ValeSourceID]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations])&#xA;SELECT&#xA;[DN]&#xA;           ,[ObjectClass]&#xA;           ,[Cn]&#xA;           ,[ValeRemoteHost]&#xA;           ,[ValeSourceID]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations]&#xA;FROM IAM.dbo.STG_ValeAccessID_OLD&#xA;&#xA;INSERT INTO IAM.dbo.ValeAccessID_NEW&#xA;           ([DN]&#xA;           ,[ObjectClass]&#xA;           ,[Cn]&#xA;           ,[ValeRemoteHost]&#xA;           ,[ValeSourceID]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations])&#xA;SELECT&#xA;[DN]&#xA;           ,[ObjectClass]&#xA;           ,[Cn]&#xA;           ,[ValeRemoteHost]&#xA;           ,[ValeSourceID]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations]&#xA;FROM IAM.dbo.STG_ValeAccessID_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{f3a351cd-df6d-4e8b-9db5-40d9079c1fd8}"
+          DTS:From="Package\Sequence Container\Delete data from - STG_ValeAccessID - Step 1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{f34c2dda-af90-4814-9508-3993eca8106e}"
+          DTS:From="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\Equalize Data - DirXML-Associations" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{7bc77025-d573-4477-911c-ef0afdf495e7}"
+          DTS:From="Package\Sequence Container\Equalize Data - DirXML-Associations"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Sequence Container\Delete data from Remote SQL - ValeAccessID Tables" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{a05961b8-10a8-4599-962c-0e7f0facfa5c}"
+          DTS:From="Package\Sequence Container\Insert into Remote SQL - ValeAccessID Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Sequence Container\Delete data from STG_ValeAccessID - Step 2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{D55E2A85-158C-4494-A05D-27DC5AF977D6}"
+          DTS:From="Package\Sequence Container\Delete data from Remote SQL - ValeAccessID Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Sequence Container\Insert into Remote SQL - ValeAccessID Tables" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="308,42"
+          Id="Package\Sequence Container\Delete data from - STG_ValeAccessID - Step 1"
+          TopLeft="56,22" />
+        <NodeLayout
+          Size="301,42"
+          Id="Package\Sequence Container\Delete data from STG_ValeAccessID - Step 2"
+          TopLeft="79,415" />
+        <NodeLayout
+          Size="341,42"
+          Id="Package\Sequence Container\Delete data from Remote SQL - ValeAccessID Tables"
+          TopLeft="49,262" />
+        <NodeLayout
+          Size="259,42"
+          Id="Package\Sequence Container\Equalize Data - DirXML-Associations"
+          TopLeft="94,182" />
+        <NodeLayout
+          Size="286,42"
+          Id="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW"
+          TopLeft="90,103" />
+        <NodeLayout
+          Size="308,42"
+          Id="Package\Sequence Container\Insert into Remote SQL - ValeAccessID Tables"
+          TopLeft="73,339" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="210,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23,39"
+              Start="0,0"
+              End="23,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
+                  <mssgle:LineSegment
+                    End="19,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19,19.5"
+                    Point2="23,19.5"
+                    Point3="23,23.5" />
+                  <mssgle:LineSegment
+                    End="23,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="233,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.5,37"
+              Start="0,0"
+              End="-9.5,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="-4,18.5" />
+                  <mssgle:LineSegment
+                    End="-5.5,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.5,18.5"
+                    Point2="-9.5,18.5"
+                    Point3="-9.5,22.5" />
+                  <mssgle:LineSegment
+                    End="-9.5,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="221.5,224">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="228.25,381">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
+          TopLeft="223.25,304">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="470,522"
+          Size="470,565"
+          Id="Package\Sequence Container"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="214,42"
+          Id="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW"
+          TopLeft="563,272" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - OLD"
+          TopLeft="206,85" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\CSV - ValeAccessID - NEW"
+          TopLeft="572,86" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD"
+          TopLeft="197,271" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW.Paths[Flat File Source Output1]"
+          TopLeft="679.5,128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.5,144"
+              Start="0,0"
+              End="-9.5,136.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,68"
+                    Point2="0,72"
+                    Point3="-4,72" />
+                  <mssgle:LineSegment
+                    End="-5.5,72" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.5,72"
+                    Point2="-9.5,72"
+                    Point3="-9.5,76" />
+                  <mssgle:LineSegment
+                    End="-9.5,136.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW.Paths[Flat File Source Output]"
+          TopLeft="312,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.5,144"
+              Start="0,0"
+              End="-9.5,136.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,68"
+                    Point2="0,72"
+                    Point3="-4,72" />
+                  <mssgle:LineSegment
+                    End="-5.5,72" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.5,72"
+                    Point2="-9.5,72"
+                    Point3="-9.5,76" />
+                  <mssgle:LineSegment
+                    End="-9.5,136.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - NEW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import STG_ValeAccessID OLD and NEW\SQL - ValeAccessID - OLD">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,2467 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/9/2019 11:20:52 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CAAWSD006"
+  DTS:CreatorName="VALENET\bcmenic"
+  DTS:DTSID="{01214E4D-2FFF-4971-9B88-FAC1C8A310C6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{335010A1-1FDC-43B0-860B-B95C9F4DA4DF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).IAM 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{16C681FE-1099-461D-9F45-C176FE28F1B1}"
+      DTS:ObjectName="(local).IAM 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=IAM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D9D807F2-4DB0-49B2-8C4E-FFE1EBD6BCC6}"
+      DTS:ObjectName="iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com;User ID=admin;Initial Catalog=IAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO/MQobS/E0KD8KNapErTlAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABrOf4STbaJDB3I233C0uDcAAAAAASAAACgAAAAEAAAAFZrGADEnY0ccHNT/rsOlIwwAAAAOvnej9ZZBbCrLA6pE/yFER398XDJQiAQKaLIPZM1W4w993p/FE1ZM19wd/Z/g8FXFAAAAPEz0HSRC2+Tbs9lD3lG+ZCyku6V</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[nrfSoD NEW - CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{d755c10d-3ded-4bc0-bf06-7ef3ee404984}"
+      DTS:ObjectName="nrfSoD NEW - CSV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\nrfSoD\nrfSoD_NEW.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{EF1B81A6-1221-419E-8B67-71E55CFC14D4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ObjectClass"
+              DTS:DTSID="{258CBF5F-2DD0-4998-B349-2D97B12F4A09}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CN"
+              DTS:DTSID="{F497593E-83D4-49E0-A36C-DA56ABCA6032}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nrfLocalizedDescrs"
+              DTS:DTSID="{0DE78481-3D05-4326-9A21-9B89DDFC036C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nrfLocalizedNames"
+              DTS:DTSID="{F518292E-5E50-41AF-8735-AA0D8BF9A0DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nrfRoles"
+              DTS:DTSID="{60CA837B-AFF9-4CE6-A312-E0CB3458DF3D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nrfSODApprovalType"
+              DTS:DTSID="{295415D4-2258-486F-AF11-BCAD38A2FD4E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeSODLevel"
+              DTS:DTSID="{80A6B42D-0A0D-4250-A8B6-07B7DD67C977}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeSODRiskNo"
+              DTS:DTSID="{27DBDAF2-867A-4AA7-A46A-FE07F7A52620}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GUID"
+              DTS:DTSID="{C93F8B6A-402A-439D-94E0-4025F441B0CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACL"
+              DTS:DTSID="{4DC238A7-9843-4E67-96E4-3E484593CA06}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nrfApprovedExceptions"
+              DTS:DTSID="{2FA4FA1C-994C-454E-B1D1-7D0FCBA92C39}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DirXML-Associations"
+              DTS:DTSID="{A0BDAC86-9160-40F3-AB38-6FFD8E93BEC2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[nrfSoD OLD - CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A7D4F043-1571-4B80-859F-311628068535}"
+      DTS:ObjectName="nrfSoD OLD - CSV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bcmenic\Desktop\DataAnalysis\nrfSoD\nrfSoD_OLD.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dn"
+              DTS:DTSID="{583546C2-EAF3-4AD9-8A7F-EFFDD9F23BCB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ObjectClass"
+              DTS:DTSID="{D331BBFA-4E53-414E-B3A7-8D3080440E09}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CN"
+              DTS:DTSID="{668F9C00-7933-40D5-A47A-42CB49875755}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nrfLocalizedDescrs"
+              DTS:DTSID="{1E110CA8-C2B8-4C52-81BC-A8E0064E70BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nrfLocalizedNames"
+              DTS:DTSID="{5185D3B5-D9B8-4979-B10C-46CF857215CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nrfRoles"
+              DTS:DTSID="{A436F972-79B2-46EC-A298-EA7C5562ED70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nrfSODApprovalType"
+              DTS:DTSID="{404B8E42-9A7D-4746-8250-6611E27BBBA4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeSODLevel"
+              DTS:DTSID="{5E4F6F04-2A55-498F-9EE5-4E1FE531118F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValeSODRiskNo"
+              DTS:DTSID="{DA0E4A7E-A99B-428C-8064-E1430F2DBF64}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GUID"
+              DTS:DTSID="{337E83E3-B035-4FEA-A122-F0562CE509CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACL"
+              DTS:DTSID="{DC4DC2AC-00AA-4DCE-B12A-36FEB60AE295}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nrfApprovedExceptions"
+              DTS:DTSID="{0F99786F-0D7E-41D6-AE8A-C18B99FD3969}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DirXML-Associations"
+              DTS:DTSID="{AB86BE12-659D-444F-8BCE-400E72EB3060}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{CDBE963E-90D8-416B-9811-6A02D7530ED0}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data from Local SQL -  nrfSoD Tables - Step 1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B92ECC30-747D-4C67-A6C4-7BFE949A99B7}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Local SQL -  nrfSoD Tables - Step 1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D9D807F2-4DB0-49B2-8C4E-FFE1EBD6BCC6}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.STG_nrfSoD_OLD&#xA;&#xA;&#xA;Truncate table IAM.dbo.STG_nrfSoD_NEW&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data from Local SQL -  nrfSoD Tables - Step 2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{c18c0d87-dd28-4453-bce2-41e0305bd45e}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Local SQL -  nrfSoD Tables - Step 2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D9D807F2-4DB0-49B2-8C4E-FFE1EBD6BCC6}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.STG_nrfSoD_OLD&#xA;Truncate table IAM.dbo.STG_nrfSoD_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data from Remote SQL - nrfSoD Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{7538fedb-f239-4ea0-b78c-d7f626ee3791}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Remote SQL - nrfSoD Tables"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D9D807F2-4DB0-49B2-8C4E-FFE1EBD6BCC6}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.nrfSoD_OLD&#xA;&#xA;Truncate table IAM.dbo.nrfSoD_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Equalize Data - DirXML-Associations"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{acfd284f-0272-43bf-92d9-00851bb83377}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Equalize Data - DirXML-Associations"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{16C681FE-1099-461D-9F45-C176FE28F1B1}"
+              SQLTask:SqlStatementSource="UPDATE nrfSoD_OLD&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'Vale_IDV_DR_SET' , 'DriverSet')&#xA;&#xA;UPDATE nrfSoD_OLD&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'DriverSetSync', 'DriverSet')&#xA;&#xA;UPDATE nrfSoD_OLD&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'CURRIDV2IDV', 'IDV2IDV')&#xA;&#xA;UPDATE nrfSoD_NEW&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'NEWIDV2IDV', 'IDV2IDV')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Equalize Data - DN, nrfRole, XML-Association"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{dbab977d-bbfe-479b-ac15-5627ef14e225}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Equalize Data - DN, nrfRole, XML-Association"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D9D807F2-4DB0-49B2-8C4E-FFE1EBD6BCC6}"
+              SQLTask:SqlStatementSource="UPDATE STG_nrfSoD_OLD&#xA;SET DN = REPLACE (DN, 'Vale_IDV_DR_SET' , 'DriverSet')&#xA;&#xA;UPDATE STG_nrfSoD_OLD&#xA;SET DN = REPLACE (DN, 'User Application' , 'UserApplication') &#xA;&#xA;&#xA;UPDATE STG_nrfSoD_OLD&#xA;SET nrfRoles = REPLACE(nrfRoles, 'Vale_IDV_DR_SET', 'DriverSet')&#xA;&#xA;UPDATE STG_nrfSoD_OLD&#xA;SET nrfRoles =  REPLACE (nrfRoles, 'User Application', 'UserApplication') &#xA;&#xA;&#xA;UPDATE STG_nrfSoD_OLD&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'Vale_IDV_DR_SET' , 'DriverSet')&#xA;&#xA;UPDATE STG_nrfSoD_OLD&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'DriverSetSync', 'DriverSet')&#xA;&#xA;UPDATE STG_nrfSoD_OLD&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'CURRIDV2IDV', 'IDV2IDV')&#xA;&#xA;UPDATE STG_nrfSoD_NEW&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'NEWIDV2IDV', 'IDV2IDV')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Equalize Data - nrfRole"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{17ff9a9d-3d11-476b-b1a6-e7fea0ef13ed}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Equalize Data - nrfRole"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{16C681FE-1099-461D-9F45-C176FE28F1B1}"
+              SQLTask:SqlStatementSource="UPDATE nrfSoD_OLD&#xA;SET nrfRoles = REPLACE(nrfRoles, 'Vale_IDV_DR_SET', 'DriverSet')&#xA;&#xA;&#xA;UPDATE nrfSoD_OLD&#xA;SET nrfRoles =  REPLACE (nrfRoles, 'User Application', 'UserApplication') " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Import nrfSoD OLD and NEW"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{65ACE017-F367-4EA1-B645-41FD80B1AF7E}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import nrfSoD OLD and NEW"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - nrfSoD NEW"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[nrfSoD NEW - CSV]"
+                      connectionManagerRefId="Package.ConnectionManagers[nrfSoD NEW - CSV]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          name="ObjectClass"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[CN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[CN]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[CN]"
+                          name="CN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[ACL]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[ACL]"
+                          name="ACL"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfLocalizedDescrs]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[nrfLocalizedDescrs]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfLocalizedDescrs]"
+                          name="nrfLocalizedDescrs"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfLocalizedNames]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[nrfLocalizedNames]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfLocalizedNames]"
+                          name="nrfLocalizedNames"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[ValeSODLevel]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[ValeSODLevel]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[ValeSODLevel]"
+                          name="ValeSODLevel"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          name="DirXML-Associations"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfRoles]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[nrfRoles]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfRoles]"
+                          name="nrfRoles"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfSODApprovalType]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[nrfSODApprovalType]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfSODApprovalType]"
+                          name="nrfSODApprovalType"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[ValeSODRiskNo]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[ValeSODRiskNo]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[ValeSODRiskNo]"
+                          name="ValeSODRiskNo"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[GUID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[GUID]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[GUID]"
+                          name="GUID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfApprovedExceptions]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[nrfApprovedExceptions]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfApprovedExceptions]"
+                          name="nrfApprovedExceptions"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="200"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[CN]"
+                          dataType="wstr"
+                          length="200"
+                          name="CN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          dataType="wstr"
+                          length="200"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[nrfLocalizedDescrs]"
+                          codePage="1252"
+                          dataType="text"
+                          name="nrfLocalizedDescrs" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[nrfLocalizedNames]"
+                          dataType="wstr"
+                          length="200"
+                          name="nrfLocalizedNames" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[ValeSODLevel]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeSODLevel" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          codePage="1252"
+                          dataType="text"
+                          name="DirXML-Associations" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[nrfRoles]"
+                          codePage="1252"
+                          dataType="text"
+                          name="nrfRoles" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[nrfSODApprovalType]"
+                          dataType="wstr"
+                          length="200"
+                          name="nrfSODApprovalType" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[ValeSODRiskNo]"
+                          codePage="1252"
+                          dataType="text"
+                          name="ValeSODRiskNo" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[GUID]"
+                          dataType="wstr"
+                          length="200"
+                          name="GUID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].ExternalColumns[nrfApprovedExceptions]"
+                          dataType="wstr"
+                          length="200"
+                          name="nrfApprovedExceptions" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="CSV - nrfSoD OLD"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[nrfSoD OLD - CSV]"
+                      connectionManagerRefId="Package.ConnectionManagers[nrfSoD OLD - CSV]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[dn]"
+                          name="dn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[ObjectClass]"
+                          name="ObjectClass"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[CN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[CN]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[CN]"
+                          name="CN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[ACL]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[ACL]"
+                          name="ACL"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfLocalizedDescrs]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[nrfLocalizedDescrs]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfLocalizedDescrs]"
+                          name="nrfLocalizedDescrs"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfLocalizedNames]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[nrfLocalizedNames]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfLocalizedNames]"
+                          name="nrfLocalizedNames"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[ValeSODLevel]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[ValeSODLevel]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[ValeSODLevel]"
+                          name="ValeSODLevel"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[DirXML-Associations]"
+                          name="DirXML-Associations"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfRoles]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[nrfRoles]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfRoles]"
+                          name="nrfRoles"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfSODApprovalType]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[nrfSODApprovalType]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfSODApprovalType]"
+                          name="nrfSODApprovalType"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[ValeSODRiskNo]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[ValeSODRiskNo]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[ValeSODRiskNo]"
+                          name="ValeSODRiskNo"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[GUID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[GUID]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[GUID]"
+                          name="GUID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfApprovedExceptions]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[nrfApprovedExceptions]"
+                          length="200"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfApprovedExceptions]"
+                          name="nrfApprovedExceptions"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="200"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[ObjectClass]"
+                          dataType="wstr"
+                          length="200"
+                          name="ObjectClass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[CN]"
+                          dataType="wstr"
+                          length="200"
+                          name="CN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[ACL]"
+                          dataType="wstr"
+                          length="200"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[nrfLocalizedDescrs]"
+                          codePage="1252"
+                          dataType="text"
+                          name="nrfLocalizedDescrs" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[nrfLocalizedNames]"
+                          dataType="wstr"
+                          length="200"
+                          name="nrfLocalizedNames" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[ValeSODLevel]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeSODLevel" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[DirXML-Associations]"
+                          codePage="1252"
+                          dataType="text"
+                          name="DirXML-Associations" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[nrfRoles]"
+                          codePage="1252"
+                          dataType="text"
+                          name="nrfRoles" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[nrfSODApprovalType]"
+                          dataType="wstr"
+                          length="200"
+                          name="nrfSODApprovalType" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[ValeSODRiskNo]"
+                          codePage="1252"
+                          dataType="text"
+                          name="ValeSODRiskNo" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[GUID]"
+                          dataType="wstr"
+                          length="200"
+                          name="GUID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].ExternalColumns[nrfApprovedExceptions]"
+                          dataType="wstr"
+                          length="200"
+                          name="nrfApprovedExceptions" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion NEW"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input].Columns[nrfLocalizedDescrs]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="nrfLocalizedDescrs"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfLocalizedDescrs]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input].Columns[nrfRoles]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="nrfRoles"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfRoles]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input].Columns[DirXML-Associations]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="DirXML-Associations"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[DirXML-Associations]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input].Columns[ValeSODRiskNo]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="ValeSODRiskNo"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[ValeSODRiskNo]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of nrfLocalizedDescrs]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of nrfLocalizedDescrs]"
+                          name="Copy of nrfLocalizedDescrs"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfLocalizedDescrs]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of nrfRoles]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of nrfRoles]"
+                          name="Copy of nrfRoles"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfRoles]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of DirXML-Associations]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of DirXML-Associations]"
+                          name="Copy of DirXML-Associations"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[DirXML-Associations]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of ValeSODRiskNo]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of ValeSODRiskNo]"
+                          name="Copy of ValeSODRiskNo"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[ValeSODRiskNo]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion OLD"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input].Columns[nrfLocalizedDescrs]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="nrfLocalizedDescrs"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfLocalizedDescrs]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input].Columns[nrfRoles]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="nrfRoles"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfRoles]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input].Columns[DirXML-Associations]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="DirXML-Associations"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[DirXML-Associations]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input].Columns[ValeSODRiskNo]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="ValeSODRiskNo"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[ValeSODRiskNo]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of nrfLocalizedDescrs]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of nrfLocalizedDescrs]"
+                          name="Copy of nrfLocalizedDescrs"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfLocalizedDescrs]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of nrfRoles]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of nrfRoles]"
+                          name="Copy of nrfRoles"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfRoles]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of DirXML-Associations]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of DirXML-Associations]"
+                          name="Copy of DirXML-Associations"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[DirXML-Associations]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of ValeSODRiskNo]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of ValeSODRiskNo]"
+                          name="Copy of ValeSODRiskNo"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[ValeSODRiskNo]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - nrfSoD NEW"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[STG_nrfSoD_NEW]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[dn]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].Columns[ObjectClass]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ObjectClass"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[objectclass]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[ObjectClass]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].Columns[CN]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="CN"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[CN]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[CN]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].Columns[ACL]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ACL"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[ACL]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].Columns[nrfLocalizedNames]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="nrfLocalizedNames"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[nrfLocalizedNames]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfLocalizedNames]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].Columns[ValeSODLevel]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeSODLevel"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeSODLevel]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[ValeSODLevel]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].Columns[nrfSODApprovalType]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="nrfSODApprovalType"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[nrfSODApprovalType]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfSODApprovalType]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].Columns[nrfApprovedExceptions]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="nrfApprovedExceptions"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[nrfApprovedExceptions]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output].Columns[nrfApprovedExceptions]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].Columns[Copy of nrfLocalizedDescrs]"
+                          cachedDataType="nText"
+                          cachedName="Copy of nrfLocalizedDescrs"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[nrfLocalizedDescrs]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of nrfLocalizedDescrs]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].Columns[Copy of nrfRoles]"
+                          cachedDataType="nText"
+                          cachedName="Copy of nrfRoles"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[nrfRoles]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of nrfRoles]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].Columns[Copy of DirXML-Associations]"
+                          cachedDataType="nText"
+                          cachedName="Copy of DirXML-Associations"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of DirXML-Associations]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].Columns[Copy of ValeSODRiskNo]"
+                          cachedDataType="nText"
+                          cachedName="Copy of ValeSODRiskNo"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeSODRiskNo]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output].Columns[Copy of ValeSODRiskNo]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="200"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[objectclass]"
+                          dataType="wstr"
+                          length="200"
+                          name="objectclass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[CN]"
+                          dataType="wstr"
+                          length="200"
+                          name="CN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[nrfLocalizedDescrs]"
+                          dataType="nText"
+                          name="nrfLocalizedDescrs" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[nrfLocalizedNames]"
+                          dataType="wstr"
+                          length="200"
+                          name="nrfLocalizedNames" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[nrfRoles]"
+                          dataType="nText"
+                          name="nrfRoles" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[nrfSODApprovalType]"
+                          dataType="wstr"
+                          length="200"
+                          name="nrfSODApprovalType" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeSODLevel]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeSODLevel" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[ValeSODRiskNo]"
+                          dataType="nText"
+                          name="ValeSODRiskNo" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          dataType="wstr"
+                          length="200"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[nrfApprovedExceptions]"
+                          dataType="wstr"
+                          length="200"
+                          name="nrfApprovedExceptions" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          dataType="nText"
+                          name="DirXML-Associations" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL - nrfSoD OLD"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[STG_nrfSoD_OLD]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].Columns[dn]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="dn"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[dn]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[dn]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].Columns[ObjectClass]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ObjectClass"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[objectclass]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[ObjectClass]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].Columns[CN]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="CN"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[CN]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[CN]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].Columns[ACL]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ACL"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[ACL]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].Columns[nrfLocalizedNames]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="nrfLocalizedNames"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[nrfLocalizedNames]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfLocalizedNames]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].Columns[ValeSODLevel]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ValeSODLevel"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeSODLevel]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[ValeSODLevel]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].Columns[nrfSODApprovalType]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="nrfSODApprovalType"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[nrfSODApprovalType]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfSODApprovalType]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].Columns[nrfApprovedExceptions]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="nrfApprovedExceptions"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[nrfApprovedExceptions]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output].Columns[nrfApprovedExceptions]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].Columns[Copy of nrfLocalizedDescrs]"
+                          cachedDataType="nText"
+                          cachedName="Copy of nrfLocalizedDescrs"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[nrfLocalizedDescrs]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of nrfLocalizedDescrs]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].Columns[Copy of nrfRoles]"
+                          cachedDataType="nText"
+                          cachedName="Copy of nrfRoles"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[nrfRoles]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of nrfRoles]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].Columns[Copy of DirXML-Associations]"
+                          cachedDataType="nText"
+                          cachedName="Copy of DirXML-Associations"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of DirXML-Associations]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].Columns[Copy of ValeSODRiskNo]"
+                          cachedDataType="nText"
+                          cachedName="Copy of ValeSODRiskNo"
+                          externalMetadataColumnId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeSODRiskNo]"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output].Columns[Copy of ValeSODRiskNo]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[dn]"
+                          dataType="wstr"
+                          length="200"
+                          name="dn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[objectclass]"
+                          dataType="wstr"
+                          length="200"
+                          name="objectclass" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[CN]"
+                          dataType="wstr"
+                          length="200"
+                          name="CN" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[nrfLocalizedDescrs]"
+                          dataType="nText"
+                          name="nrfLocalizedDescrs" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[nrfLocalizedNames]"
+                          dataType="wstr"
+                          length="200"
+                          name="nrfLocalizedNames" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[nrfRoles]"
+                          dataType="nText"
+                          name="nrfRoles" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[nrfSODApprovalType]"
+                          dataType="wstr"
+                          length="200"
+                          name="nrfSODApprovalType" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeSODLevel]"
+                          dataType="wstr"
+                          length="200"
+                          name="ValeSODLevel" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[ValeSODRiskNo]"
+                          dataType="nText"
+                          name="ValeSODRiskNo" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[ACL]"
+                          dataType="wstr"
+                          length="200"
+                          name="ACL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[nrfApprovedExceptions]"
+                          dataType="wstr"
+                          length="200"
+                          name="nrfApprovedExceptions" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input].ExternalColumns[DirXML-Associations]"
+                          dataType="nText"
+                          name="DirXML-Associations" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Import nrfSoD OLD and NEW.Paths[Data Conversion Output]"
+                  endId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Sequence Container\Import nrfSoD OLD and NEW.Paths[Data Conversion Output1]"
+                  endId="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Sequence Container\Import nrfSoD OLD and NEW.Paths[Flat File Source Output]"
+                  endId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Sequence Container\Import nrfSoD OLD and NEW.Paths[Flat File Source Output1]"
+                  endId="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Insert into Remote SQL - nrfSoD Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{af212294-1f64-4d72-94e0-30ec3d8e36e4}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert into Remote SQL - nrfSoD Tables"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D9D807F2-4DB0-49B2-8C4E-FFE1EBD6BCC6}"
+              SQLTask:SqlStatementSource="INSERT INTO IAM.dbo.nrfSoD_OLD&#xA;            (dn,&#xA;objectclass,&#xA;CN,&#xA;nrfLocalizedDescrs,&#xA;nrfLocalizedNames,&#xA;nrfRoles,&#xA;nrfSODApprovalType,&#xA;ValeSODLevel,&#xA;ValeSODRiskNo,&#xA;ACL,&#xA;nrfApprovedExceptions,&#xA;[DirXML-Associations])&#xA;     SELECT&#xA;&#x9;dn,&#xA;&#x9;objectclass,&#xA;&#x9;CN,&#xA;&#x9;nrfLocalizedDescrs,&#xA;&#x9;nrfLocalizedNames,&#xA;nrfRoles,&#xA;nrfSODApprovalType,&#xA;ValeSODLevel,&#xA;ValeSODRiskNo,&#xA;ACL,&#xA;nrfApprovedExceptions,&#xA;[DirXML-Associations] &#xA;FROM IAM.dbo.STG_nrfSoD_OLD&#xA;&#xA;INSERT INTO IAM.dbo.nrfSoD_NEW&#xA;            (dn,&#xA;objectclass,&#xA;CN,&#xA;nrfLocalizedDescrs,&#xA;nrfLocalizedNames,&#xA;nrfRoles,&#xA;nrfSODApprovalType,&#xA;ValeSODLevel,&#xA;ValeSODRiskNo,&#xA;ACL,&#xA;nrfApprovedExceptions,&#xA;[DirXML-Associations])&#xA;     SELECT&#xA;&#x9;dn,&#xA;&#x9;objectclass,&#xA;&#x9;CN,&#xA;&#x9;nrfLocalizedDescrs,&#xA;&#x9;nrfLocalizedNames,&#xA;nrfRoles,&#xA;nrfSODApprovalType,&#xA;ValeSODLevel,&#xA;ValeSODRiskNo,&#xA;ACL,&#xA;nrfApprovedExceptions,&#xA;[DirXML-Associations] &#xA;FROM IAM.dbo.STG_nrfSoD_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{D776EE85-9937-41CC-833D-AB6CBBD72585}"
+          DTS:From="Package\Sequence Container\Delete data from Local SQL -  nrfSoD Tables - Step 1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\Import nrfSoD OLD and NEW" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{5F911750-BFC3-4657-866E-1A30E06463A5}"
+          DTS:From="Package\Sequence Container\Import nrfSoD OLD and NEW"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\Equalize Data - DN, nrfRole, XML-Association" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{ABA5D8A0-32AE-4A36-AD98-69CF329F0741}"
+          DTS:From="Package\Sequence Container\Equalize Data - DN, nrfRole, XML-Association"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Sequence Container\Delete data from Remote SQL - nrfSoD Tables" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{885ED6E5-6030-4FA6-A76D-BE3D3CE7C35F}"
+          DTS:From="Package\Sequence Container\Equalize Data - nrfRole"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Sequence Container\Equalize Data - DirXML-Associations" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{E4280BAB-0B22-4DE7-9C36-1E86CACAF1CF}"
+          DTS:From="Package\Sequence Container\Delete data from Remote SQL - nrfSoD Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Sequence Container\Insert into Remote SQL - nrfSoD Tables" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{24704C28-6082-41DA-B142-389501455B88}"
+          DTS:From="Package\Sequence Container\Insert into Remote SQL - nrfSoD Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\Sequence Container\Delete data from Local SQL -  nrfSoD Tables - Step 2" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="338,42"
+          Id="Package\Sequence Container\Delete data from Local SQL -  nrfSoD Tables - Step 1"
+          TopLeft="183,43" />
+        <NodeLayout
+          Size="338,42"
+          Id="Package\Sequence Container\Delete data from Local SQL -  nrfSoD Tables - Step 2"
+          TopLeft="158,507" />
+        <NodeLayout
+          Size="306,42"
+          Id="Package\Sequence Container\Delete data from Remote SQL - nrfSoD Tables"
+          TopLeft="178,365" />
+        <NodeLayout
+          Size="259,42"
+          Id="Package\Sequence Container\Equalize Data - DirXML-Associations"
+          TopLeft="424,274" />
+        <NodeLayout
+          Size="303,42"
+          Id="Package\Sequence Container\Equalize Data - DN, nrfRole, XML-Association"
+          TopLeft="203,228" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Sequence Container\Equalize Data - nrfRole"
+          TopLeft="451,201" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Sequence Container\Import nrfSoD OLD and NEW"
+          TopLeft="238,137" />
+        <NodeLayout
+          Size="273,42"
+          Id="Package\Sequence Container\Insert into Remote SQL - nrfSoD Tables"
+          TopLeft="191,437" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="350.75,85">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="352,179">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="550.5,243">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 5]"
+          TopLeft="329.25,407">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 6]"
+          TopLeft="327.25,479">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="354.5,270">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23.5,95"
+              Start="0,0"
+              End="-23.5,87.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.5"
+                    Point2="0,47.5"
+                    Point3="-4,47.5" />
+                  <mssgle:LineSegment
+                    End="-19.5,47.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19.5,47.5"
+                    Point2="-23.5,47.5"
+                    Point3="-23.5,51.5" />
+                  <mssgle:LineSegment
+                    End="-23.5,87.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="696,636"
+          Size="696,679"
+          Id="Package\Sequence Container"
+          TopLeft="91,32" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Import nrfSoD OLD and NEW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW"
+          TopLeft="361,284" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD OLD"
+          TopLeft="61,60" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD"
+          TopLeft="63,283" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion OLD"
+          TopLeft="60,164" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Sequence Container\Import nrfSoD OLD and NEW\Data Conversion NEW"
+          TopLeft="358,165" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Sequence Container\Import nrfSoD OLD and NEW\CSV - nrfSoD NEW"
+          TopLeft="359,61" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Import nrfSoD OLD and NEW.Paths[Data Conversion Output1]"
+          TopLeft="450,207">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77"
+              Start="0,0"
+              End="0,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Import nrfSoD OLD and NEW.Paths[Data Conversion Output]"
+          TopLeft="150.5,206">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77"
+              Start="0,0"
+              End="0,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Import nrfSoD OLD and NEW.Paths[Flat File Source Output1]"
+          TopLeft="449.25,103">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Import nrfSoD OLD and NEW.Paths[Flat File Source Output]"
+          TopLeft="149.75,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD NEW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import nrfSoD OLD and NEW\SQL - nrfSoD OLD">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
