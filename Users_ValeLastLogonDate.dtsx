@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{7741CA63-2A90-436D-912B-5CA231D9575A}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{B08B2EF6-4C86-4758-AC11-06ECB32F5530}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -24,6 +24,21 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=(local);Initial Catalog=IAM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{01B4ED4D-3AF7-46D9-9C38-95F6D245C2FA}"
+      DTS:ObjectName="iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com;User ID=Admin;Initial Catalog=IAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAale4kdt9/0i5HjcXVTwCigAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABVDT03bmQqIpQLMbd8E2ozAAAAAASAAACgAAAAEAAAAI/GHo17B66j79DdP05RqZQwAAAAzVs2F6GWpdi1mf7EQqfE7UVIWWXNhxhqi3Wz+tJhCrt5+QWLO0tMfd/iwkxCgSf/FAAAAMerHJ8x/oJN++TrM87VlSD3HrH1</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -130,51 +145,51 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Import ValeLastLogonDate Data\Delete data from Local SQL - Users_ValeLastLogonDate Tables - Step 1"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6539755a-404a-4b81-9a6c-6fd4e2526765}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Delete data from Local SQL - Users_ValeLastLogonDate Tables - Step 1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{537386AA-A0B5-4D57-A012-CF4AE9B4EE5C}"
-              SQLTask:SqlStatementSource="Delete from IAM.dbo.Users_Attributes_IDV_OLD&#xA;&#xA;Delete from IAM.dbo.Users_Attributes_IDV_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Import ValeLastLogonDate Data\Delete data from Local SQL - Users_ValeLastLogonDate Tables - Step 2"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{21cec80a-747e-4f8e-ae89-a521e34d350d}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Delete data from Local SQL - Users_ValeLastLogonDate Tables - Step 2"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{537386AA-A0B5-4D57-A012-CF4AE9B4EE5C}"
-              SQLTask:SqlStatementSource="Delete from IAM.dbo.Users_Attributes_IDV_OLD&#xA;&#xA;Delete from IAM.dbo.Users_Attributes_IDV_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Import ValeLastLogonDate Data\Delete data from Remote SQL - Splited_Users_ValeLastLogonDate Tables"
+          DTS:refId="Package\Import ValeLastLogonDate Data\Delete data from Splited_Users_ValeLastLogonDate Tables"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{e7d7dbfc-1e14-4f21-9f1d-383d35030c88}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Delete data from Remote SQL - Splited_Users_ValeLastLogonDate Tables"
+          DTS:ObjectName="Delete data from Splited_Users_ValeLastLogonDate Tables"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{537386AA-A0B5-4D57-A012-CF4AE9B4EE5C}"
-              SQLTask:SqlStatementSource="Delete from [iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com].IAM.dbo.Splited_Users_ValeLastLogonDate_OLD&#xA;&#xA;Delete from [iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com].IAM.dbo.Splited_Users_ValeLastLogonDate_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:Connection="{01B4ED4D-3AF7-46D9-9C38-95F6D245C2FA}"
+              SQLTask:SqlStatementSource="Delete from IAM.dbo.Splited_Users_ValeLastLogonDate_OLD&#xA;&#xA;Delete from IAM.dbo.Splited_Users_ValeLastLogonDate_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Import ValeLastLogonDate Data\Delete data from Users_ValeLastLogonDate Tables - Step 1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6539755a-404a-4b81-9a6c-6fd4e2526765}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Users_ValeLastLogonDate Tables - Step 1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{01B4ED4D-3AF7-46D9-9C38-95F6D245C2FA}"
+              SQLTask:SqlStatementSource="Delete from IAM.dbo.STG_Users_Attributes_IDV_OLD&#xA;&#xA;Delete from IAM.dbo.STG_Users_Attributes_IDV_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Import ValeLastLogonDate Data\Delete data from Users_ValeLastLogonDate Tables - Step 2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{21cec80a-747e-4f8e-ae89-a521e34d350d}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Users_ValeLastLogonDate Tables - Step 2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{01B4ED4D-3AF7-46D9-9C38-95F6D245C2FA}"
+              SQLTask:SqlStatementSource="Delete from IAM.dbo.STG_Users_Attributes_IDV_OLD&#xA;&#xA;Delete from IAM.dbo.STG_Users_Attributes_IDV_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -697,7 +712,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[Users_Attributes_IDV_NEW]</property>
+                      name="OpenRowset">[dbo].[STG_Users_Attributes_IDV_NEW]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -740,8 +755,8 @@
                   <connections>
                     <connection
                       refId="Package\Import ValeLastLogonDate Data\Import Users_ValeLastLogonDate OLD and NEW\SQL - Users_ValeLastLogonDate NEW.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[(local).IAM]"
-                      connectionManagerRefId="Package.ConnectionManagers[(local).IAM]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -844,7 +859,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[Users_Attributes_IDV_OLD]</property>
+                      name="OpenRowset">[dbo].[STG_Users_Attributes_IDV_OLD]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -887,8 +902,8 @@
                   <connections>
                     <connection
                       refId="Package\Import ValeLastLogonDate Data\Import Users_ValeLastLogonDate OLD and NEW\SQL - Users_ValeLastLogonDate OLD.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[(local).IAM]"
-                      connectionManagerRefId="Package.ConnectionManagers[(local).IAM]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1014,7 +1029,7 @@
           <DTS:ObjectData>
             <ExecuteProcessData
               Executable="C:\Users\bcmenic\Desktop\OrderValuesInAttributes\Published\OrderValuesInAttributes.exe"
-              Arguments="User_ValeLastLogonDate Split local" />
+              Arguments="User_ValeLastLogonDate Split remote" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -1026,12 +1041,12 @@
           DTS:From="Package\Import ValeLastLogonDate Data\Import Users_ValeLastLogonDate OLD and NEW"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Import ValeLastLogonDate Data\Delete data from Remote SQL - Splited_Users_ValeLastLogonDate Tables" />
+          DTS:To="Package\Import ValeLastLogonDate Data\Delete data from Splited_Users_ValeLastLogonDate Tables" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import ValeLastLogonDate Data.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
           DTS:DTSID="{5b8bbaa1-ac01-48e8-9822-37a3e081e176}"
-          DTS:From="Package\Import ValeLastLogonDate Data\Delete data from Remote SQL - Splited_Users_ValeLastLogonDate Tables"
+          DTS:From="Package\Import ValeLastLogonDate Data\Delete data from Splited_Users_ValeLastLogonDate Tables"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
           DTS:To="Package\Import ValeLastLogonDate Data\Split Users_ValeLastLogonDate information" />
@@ -1042,12 +1057,12 @@
           DTS:From="Package\Import ValeLastLogonDate Data\Split Users_ValeLastLogonDate information"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Import ValeLastLogonDate Data\Delete data from Local SQL - Users_ValeLastLogonDate Tables - Step 2" />
+          DTS:To="Package\Import ValeLastLogonDate Data\Delete data from Users_ValeLastLogonDate Tables - Step 2" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import ValeLastLogonDate Data.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
           DTS:DTSID="{cb21ca4c-f825-4bc4-beed-b171c07aaf80}"
-          DTS:From="Package\Import ValeLastLogonDate Data\Delete data from Local SQL - Users_ValeLastLogonDate Tables - Step 1"
+          DTS:From="Package\Import ValeLastLogonDate Data\Delete data from Users_ValeLastLogonDate Tables - Step 1"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
           DTS:To="Package\Import ValeLastLogonDate Data\Import Users_ValeLastLogonDate OLD and NEW" />
@@ -1067,17 +1082,17 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="432,42"
-          Id="Package\Import ValeLastLogonDate Data\Delete data from Local SQL - Users_ValeLastLogonDate Tables - Step 1"
-          TopLeft="13,23" />
+          Size="372,42"
+          Id="Package\Import ValeLastLogonDate Data\Delete data from Users_ValeLastLogonDate Tables - Step 1"
+          TopLeft="49,23" />
         <NodeLayout
-          Size="432,42"
-          Id="Package\Import ValeLastLogonDate Data\Delete data from Local SQL - Users_ValeLastLogonDate Tables - Step 2"
-          TopLeft="17,346" />
+          Size="372,42"
+          Id="Package\Import ValeLastLogonDate Data\Delete data from Users_ValeLastLogonDate Tables - Step 2"
+          TopLeft="51,346" />
         <NodeLayout
-          Size="443,42"
-          Id="Package\Import ValeLastLogonDate Data\Delete data from Remote SQL - Splited_Users_ValeLastLogonDate Tables"
-          TopLeft="12,170" />
+          Size="370,42"
+          Id="Package\Import ValeLastLogonDate Data\Delete data from Splited_Users_ValeLastLogonDate Tables"
+          TopLeft="38,173" />
         <NodeLayout
           Size="320,42"
           Id="Package\Import ValeLastLogonDate Data\Import Users_ValeLastLogonDate OLD and NEW"
@@ -1085,21 +1100,21 @@
         <NodeLayout
           Size="292,42"
           Id="Package\Import ValeLastLogonDate Data\Split Users_ValeLastLogonDate information"
-          TopLeft="92,258" />
+          TopLeft="84,256" />
         <EdgeLayout
           Id="Package\Import ValeLastLogonDate Data.PrecedenceConstraints[Constraint]"
-          TopLeft="230.75,139">
+          TopLeft="225.5,139">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31"
+              EndConnector="0,34"
               Start="0,0"
-              End="0,23.5">
+              End="0,26.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.5" />
+                    End="0,26.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1110,18 +1125,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import ValeLastLogonDate Data.PrecedenceConstraints[Constraint 1]"
-          TopLeft="235.75,212">
+          TopLeft="226.5,215">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46"
+              EndConnector="0,41"
               Start="0,0"
-              End="0,38.5">
+              End="0,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.5" />
+                    End="0,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1132,18 +1147,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import ValeLastLogonDate Data.PrecedenceConstraints[Constraint 2]"
-          TopLeft="235.5,300">
+          TopLeft="233.5,298">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46"
+              EndConnector="0,48"
               Start="0,0"
-              End="0,38.5">
+              End="0,40.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.5" />
+                    End="0,40.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1154,7 +1169,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import ValeLastLogonDate Data.PrecedenceConstraints[Constraint 3]"
-          TopLeft="228.5,65">
+          TopLeft="231.5,65">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"

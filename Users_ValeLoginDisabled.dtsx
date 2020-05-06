@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{7BE21AC4-C939-4740-BA23-372859C60492}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{2F4A8A23-EA98-4154-82FA-91114DEF6C1F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -24,6 +24,21 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=(local);Initial Catalog=IAM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F5130125-5E24-4B4F-A7D8-703165F8D2B2}"
+      DTS:ObjectName="iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com;User ID=Admin;Initial Catalog=IAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAale4kdt9/0i5HjcXVTwCigAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACZpH7tUvUFtzpVyJrcLa30AAAAAASAAACgAAAAEAAAAFNV7fqlR7J+FHFfifTG1xswAAAAfj5PeT28E4ef0D/56uidW8Rt97K0vZDm9kKYYCJSKEwypnCx/rvpdrY6jWg8GhefFAAAAJsDLUSchtCrFTjbPmTd0JKwbWC2</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -130,51 +145,51 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Import ValeLoginDisabled Data\Delete data from Local SQL - Users_ValeLoginDisabled Tables - Step 1"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0f643950-eda8-486a-a321-5adebd8753dd}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Delete data from Local SQL - Users_ValeLoginDisabled Tables - Step 1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{134DD25B-506F-48CF-BF89-943384A982B3}"
-              SQLTask:SqlStatementSource="Delete from IAM.dbo.Users_Attributes_IDV_OLD&#xA;&#xA;Delete from IAM.dbo.Users_Attributes_IDV_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Import ValeLoginDisabled Data\Delete data from Local SQL - Users_ValeLoginDisabled Tables - Step 2"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{3523a5d6-4f6c-4958-8a5d-4bb0793c805b}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Delete data from Local SQL - Users_ValeLoginDisabled Tables - Step 2"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{134DD25B-506F-48CF-BF89-943384A982B3}"
-              SQLTask:SqlStatementSource="Delete from IAM.dbo.Users_Attributes_IDV_OLD&#xA;&#xA;Delete from IAM.dbo.Users_Attributes_IDV_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Import ValeLoginDisabled Data\Delete data from Remote SQL - Splited_Users_ValeLoginDisabled Tables"
+          DTS:refId="Package\Import ValeLoginDisabled Data\Delete data from Splited_Users_ValeLoginDisabled Tables"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{2a3f0042-1370-418d-acb2-724662642645}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Delete data from Remote SQL - Splited_Users_ValeLoginDisabled Tables"
+          DTS:ObjectName="Delete data from Splited_Users_ValeLoginDisabled Tables"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{134DD25B-506F-48CF-BF89-943384A982B3}"
-              SQLTask:SqlStatementSource="Delete from [iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com].IAM.dbo.Splited_Users_ValeLoginDisabled_OLD&#xA;&#xA;Delete from [iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com].IAM.dbo.Splited_Users_ValeLoginDisabled_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:Connection="{F5130125-5E24-4B4F-A7D8-703165F8D2B2}"
+              SQLTask:SqlStatementSource="Delete from IAM.dbo.Splited_Users_ValeLoginDisabled_OLD&#xA;&#xA;Delete from IAM.dbo.Splited_Users_ValeLoginDisabled_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Import ValeLoginDisabled Data\Delete data from Users_ValeLoginDisabled Tables - Step 1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0f643950-eda8-486a-a321-5adebd8753dd}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Users_ValeLoginDisabled Tables - Step 1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{F5130125-5E24-4B4F-A7D8-703165F8D2B2}"
+              SQLTask:SqlStatementSource="Delete from IAM.dbo.STG_Users_Attributes_IDV_OLD&#xA;&#xA;Delete from IAM.dbo.STG_Users_Attributes_IDV_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Import ValeLoginDisabled Data\Delete data from Users_ValeLoginDisabled Tables - Step 2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3523a5d6-4f6c-4958-8a5d-4bb0793c805b}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data from Users_ValeLoginDisabled Tables - Step 2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{F5130125-5E24-4B4F-A7D8-703165F8D2B2}"
+              SQLTask:SqlStatementSource="Delete from IAM.dbo.STG_Users_Attributes_IDV_OLD&#xA;&#xA;Delete from IAM.dbo.STG_Users_Attributes_IDV_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -697,7 +712,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[Users_Attributes_IDV_NEW]</property>
+                      name="OpenRowset">[dbo].[STG_Users_Attributes_IDV_NEW]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -740,8 +755,8 @@
                   <connections>
                     <connection
                       refId="Package\Import ValeLoginDisabled Data\Import Users_ValeLoginDisabled OLD and NEW\SQL - Users_ValeLoginDisabled NEW.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[(local).IAM]"
-                      connectionManagerRefId="Package.ConnectionManagers[(local).IAM]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -844,7 +859,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[Users_Attributes_IDV_OLD]</property>
+                      name="OpenRowset">[dbo].[STG_Users_Attributes_IDV_OLD]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -887,8 +902,8 @@
                   <connections>
                     <connection
                       refId="Package\Import ValeLoginDisabled Data\Import Users_ValeLoginDisabled OLD and NEW\SQL - Users_ValeLoginDisabled OLD.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[(local).IAM]"
-                      connectionManagerRefId="Package.ConnectionManagers[(local).IAM]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.Admin]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1014,7 +1029,7 @@
           <DTS:ObjectData>
             <ExecuteProcessData
               Executable="C:\Users\bcmenic\Desktop\OrderValuesInAttributes\Published\OrderValuesInAttributes.exe"
-              Arguments="User_ValeLoginDisabled Split local" />
+              Arguments="User_ValeLoginDisabled Split remote" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -1026,12 +1041,12 @@
           DTS:From="Package\Import ValeLoginDisabled Data\Import Users_ValeLoginDisabled OLD and NEW"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Import ValeLoginDisabled Data\Delete data from Remote SQL - Splited_Users_ValeLoginDisabled Tables" />
+          DTS:To="Package\Import ValeLoginDisabled Data\Delete data from Splited_Users_ValeLoginDisabled Tables" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import ValeLoginDisabled Data.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
           DTS:DTSID="{c9ab25c6-df08-4cf2-9e66-cae200880f99}"
-          DTS:From="Package\Import ValeLoginDisabled Data\Delete data from Remote SQL - Splited_Users_ValeLoginDisabled Tables"
+          DTS:From="Package\Import ValeLoginDisabled Data\Delete data from Splited_Users_ValeLoginDisabled Tables"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
           DTS:To="Package\Import ValeLoginDisabled Data\Split Users_ValeLoginDisabled information" />
@@ -1042,12 +1057,12 @@
           DTS:From="Package\Import ValeLoginDisabled Data\Split Users_ValeLoginDisabled information"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Import ValeLoginDisabled Data\Delete data from Local SQL - Users_ValeLoginDisabled Tables - Step 2" />
+          DTS:To="Package\Import ValeLoginDisabled Data\Delete data from Users_ValeLoginDisabled Tables - Step 2" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import ValeLoginDisabled Data.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
           DTS:DTSID="{9b87695f-c211-46ac-9c19-6e049806d9f2}"
-          DTS:From="Package\Import ValeLoginDisabled Data\Delete data from Local SQL - Users_ValeLoginDisabled Tables - Step 1"
+          DTS:From="Package\Import ValeLoginDisabled Data\Delete data from Users_ValeLoginDisabled Tables - Step 1"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
           DTS:To="Package\Import ValeLoginDisabled Data\Import Users_ValeLoginDisabled OLD and NEW" />
@@ -1067,17 +1082,17 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="428,42"
-          Id="Package\Import ValeLoginDisabled Data\Delete data from Local SQL - Users_ValeLoginDisabled Tables - Step 1"
-          TopLeft="13,23" />
+          Size="367,42"
+          Id="Package\Import ValeLoginDisabled Data\Delete data from Users_ValeLoginDisabled Tables - Step 1"
+          TopLeft="42,20" />
         <NodeLayout
-          Size="427,42"
-          Id="Package\Import ValeLoginDisabled Data\Delete data from Local SQL - Users_ValeLoginDisabled Tables - Step 2"
-          TopLeft="17,346" />
+          Size="367,42"
+          Id="Package\Import ValeLoginDisabled Data\Delete data from Users_ValeLoginDisabled Tables - Step 2"
+          TopLeft="49,342" />
         <NodeLayout
-          Size="439,42"
-          Id="Package\Import ValeLoginDisabled Data\Delete data from Remote SQL - Splited_Users_ValeLoginDisabled Tables"
-          TopLeft="12,170" />
+          Size="366,42"
+          Id="Package\Import ValeLoginDisabled Data\Delete data from Splited_Users_ValeLoginDisabled Tables"
+          TopLeft="47,171" />
         <NodeLayout
           Size="315,42"
           Id="Package\Import ValeLoginDisabled Data\Import Users_ValeLoginDisabled OLD and NEW"
@@ -1088,73 +1103,7 @@
           TopLeft="92,258" />
         <EdgeLayout
           Id="Package\Import ValeLoginDisabled Data.PrecedenceConstraints[Constraint]"
-          TopLeft="228.5,139">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31"
-              Start="0,0"
-              End="0,23.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import ValeLoginDisabled Data.PrecedenceConstraints[Constraint 1]"
-          TopLeft="233.75,212">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46"
-              Start="0,0"
-              End="0,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import ValeLoginDisabled Data.PrecedenceConstraints[Constraint 2]"
-          TopLeft="233.25,300">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46"
-              Start="0,0"
-              End="0,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import ValeLoginDisabled Data.PrecedenceConstraints[Constraint 3]"
-          TopLeft="226.25,65">
+          TopLeft="227.75,139">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1174,11 +1123,77 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import ValeLoginDisabled Data.PrecedenceConstraints[Constraint 1]"
+          TopLeft="233,213">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import ValeLoginDisabled Data.PrecedenceConstraints[Constraint 2]"
+          TopLeft="234.25,300">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import ValeLoginDisabled Data.PrecedenceConstraints[Constraint 3]"
+          TopLeft="225.5,62">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="456,426"
-          Size="456,469"
+          PanelSize="456,443"
+          Size="456,486"
           Id="Package\Import ValeLoginDisabled Data"
           TopLeft="414,130" />
       </GraphLayout>

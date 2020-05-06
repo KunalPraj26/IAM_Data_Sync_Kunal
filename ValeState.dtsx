@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{3B28667F-C54A-4840-AA32-46028F106BBB}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{05749358-B4D1-4476-AF3E-290A44E02EE1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -239,7 +239,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArr5P3dMELUabwhws5ZNnqwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADeaiFSOB3GoqnSDjUCxMcnAAAAAASAAACgAAAAEAAAAD/P7zIxsjZOE4aOKwVIcKswAAAA0V9aUviHIQfAIa/L21Ptc3XkvtkoVke06XRVv3J3Mz1Dwv8aLMMEe0D97zFE60/fFAAAANdJB0/zRm72f6wjqESg9YThgk/P</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAale4kdt9/0i5HjcXVTwCigAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADD9Kp5Dpfvtd+GjWlIGcTJAAAAAASAAACgAAAAEAAAAKNaEzUBUDgR94tPvTF9DZYwAAAAkxQrABjI0TJIKPgTklAb1/oo9iy3Dx5NIncS36AehxD4BObDBMjn1oaIPL5alhVGFAAAAA8ihAiWC6eLjMo2EVpaO5CmXYj5</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -257,45 +257,45 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Sequence Container\Delete data from Local SQL - ValeCountry - Step 2"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{9ba995a6-8894-453b-bbb0-74780bc795a1}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Delete data from Local SQL - ValeCountry - Step 2"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{1BB85E3D-9BE5-49F3-8140-5A8FFD4726E4}"
-              SQLTask:SqlStatementSource="Truncate table IAM.dbo.ValeState_OLD&#xA;&#xA;Truncate table IAM.dbo.ValeState_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Sequence Container\Delete data from Local SQL - ValeState - Step 1"
+          DTS:refId="Package\Sequence Container\Delete data STG_ValeState - Step 1"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{a76a3da1-ae22-411e-9cd7-7477f68c5c59}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Delete data from Local SQL - ValeState - Step 1"
+          DTS:ObjectName="Delete data STG_ValeState - Step 1"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{1BB85E3D-9BE5-49F3-8140-5A8FFD4726E4}"
-              SQLTask:SqlStatementSource="Truncate table IAM.dbo.ValeState_OLD&#xA;&#xA;Truncate table IAM.dbo.ValeState_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:Connection="{CE272B30-AD79-45CC-8F80-955BD05D9CA9}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.STG_ValeState_OLD&#xA;&#xA;Truncate table IAM.dbo.STG_ValeState_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Sequence Container\Delete data from Remote SQL - ValeState Tables"
+          DTS:refId="Package\Sequence Container\Delete data STG_ValeState - Step 2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9ba995a6-8894-453b-bbb0-74780bc795a1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete data STG_ValeState - Step 2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CE272B30-AD79-45CC-8F80-955BD05D9CA9}"
+              SQLTask:SqlStatementSource="Truncate table IAM.dbo.STG_ValeState_OLD&#xA;&#xA;Truncate table IAM.dbo.STG_ValeState_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Delete data ValeState Tables"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{ff05764e-6132-4321-8487-4d30aa9fcfb2}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Delete data from Remote SQL - ValeState Tables"
+          DTS:ObjectName="Delete data ValeState Tables"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -316,8 +316,8 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{1BB85E3D-9BE5-49F3-8140-5A8FFD4726E4}"
-              SQLTask:SqlStatementSource="UPDATE [ValeState_OLD]&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'DriverSetSync', 'DriverSet')&#xA;&#xA;UPDATE [ValeState_OLD]&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'CURRIDV2IDV', 'IDV2IDV')&#xA;&#xA;UPDATE [ValeState_NEW]&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'NEWIDV2IDV', 'IDV2IDV')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:Connection="{CE272B30-AD79-45CC-8F80-955BD05D9CA9}"
+              SQLTask:SqlStatementSource="UPDATE [STG_ValeState_OLD]&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'DriverSetSync', 'DriverSet')&#xA;&#xA;UPDATE [STG_ValeState_OLD]&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'CURRIDV2IDV', 'IDV2IDV')&#xA;&#xA;UPDATE [STG_ValeState_NEW]&#xA;SET [DirXML-Associations] = REPLACE([DirXML-Associations], 'NEWIDV2IDV', 'IDV2IDV')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -948,7 +948,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[ValeState_NEW]</property>
+                      name="OpenRowset">[dbo].[STG_ValeState_NEW]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -991,8 +991,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Import ValeState OLD and NEW\SQL - ValeState - NEW.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[(local).IAM 1]"
-                      connectionManagerRefId="Package.ConnectionManagers[(local).IAM 1]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1159,7 +1159,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[ValeState_OLD]</property>
+                      name="OpenRowset">[dbo].[STG_ValeState_OLD]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1202,8 +1202,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Import ValeState OLD and NEW\SQL - ValeState - OLD.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[(local).IAM 1]"
-                      connectionManagerRefId="Package.ConnectionManagers[(local).IAM 1]"
+                      connectionManagerID="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
+                      connectionManagerRefId="Package.ConnectionManagers[iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1371,19 +1371,19 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Sequence Container\Insert into Remote SQL - ValeState Tables"
+          DTS:refId="Package\Sequence Container\Insert into ValeState Tables"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{2bf1a1b0-4831-4bb5-aa5d-10a8d3f5fdf7}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Insert into Remote SQL - ValeState Tables"
+          DTS:ObjectName="Insert into ValeState Tables"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{1BB85E3D-9BE5-49F3-8140-5A8FFD4726E4}"
-              SQLTask:SqlStatementSource="INSERT INTO [iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com].IAM.dbo.ValeState_OLD&#xA;           ([DN]&#xA;           ,[CN]&#xA;           ,[ObjectClass]&#xA;           ,[ValeEmailAddress]&#xA;           ,[ValeGenericName]&#xA;           ,[ValeLocalizedName]&#xA;           ,[ValeParentLocation]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations])&#xA;SELECT&#xA;           [DN]&#xA;           ,[CN]&#xA;           ,[ObjectClass]&#xA;           ,[ValeEmailAddress]&#xA;           ,[ValeGenericName]&#xA;           ,[ValeLocalizedName]&#xA;           ,[ValeParentLocation]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations]&#xA;FROM IAM.dbo.ValeState_OLD&#xA;&#xA;INSERT INTO [iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com].IAM.dbo.ValeState_NEW&#xA;           ([DN]&#xA;           ,[CN]&#xA;           ,[ObjectClass]&#xA;           ,[ValeEmailAddress]&#xA;           ,[ValeGenericName]&#xA;           ,[ValeLocalizedName]&#xA;           ,[ValeParentLocation]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations])&#xA;SELECT&#xA;           [DN]&#xA;           ,[CN]&#xA;           ,[ObjectClass]&#xA;           ,[ValeEmailAddress]&#xA;           ,[ValeGenericName]&#xA;           ,[ValeLocalizedName]&#xA;           ,[ValeParentLocation]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations]&#xA;FROM IAM.dbo.ValeState_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:Connection="{CE272B30-AD79-45CC-8F80-955BD05D9CA9}"
+              SQLTask:SqlStatementSource="INSERT INTO IAM.dbo.ValeState_OLD&#xA;           ([DN]&#xA;           ,[CN]&#xA;           ,[ObjectClass]&#xA;           ,[ValeEmailAddress]&#xA;           ,[ValeGenericName]&#xA;           ,[ValeLocalizedName]&#xA;           ,[ValeParentLocation]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations])&#xA;SELECT&#xA;           [DN]&#xA;           ,[CN]&#xA;           ,[ObjectClass]&#xA;           ,[ValeEmailAddress]&#xA;           ,[ValeGenericName]&#xA;           ,[ValeLocalizedName]&#xA;           ,[ValeParentLocation]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations]&#xA;FROM IAM.dbo.STG_ValeState_OLD&#xA;&#xA;INSERT INTO [iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com].IAM.dbo.ValeState_NEW&#xA;           ([DN]&#xA;           ,[CN]&#xA;           ,[ObjectClass]&#xA;           ,[ValeEmailAddress]&#xA;           ,[ValeGenericName]&#xA;           ,[ValeLocalizedName]&#xA;           ,[ValeParentLocation]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations])&#xA;SELECT&#xA;           [DN]&#xA;           ,[CN]&#xA;           ,[ObjectClass]&#xA;           ,[ValeEmailAddress]&#xA;           ,[ValeGenericName]&#xA;           ,[ValeLocalizedName]&#xA;           ,[ValeParentLocation]&#xA;           ,[ACL]&#xA;           ,[DirXML-Associations]&#xA;FROM IAM.dbo.STG_ValeState_NEW" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -1399,7 +1399,7 @@
           <DTS:ObjectData>
             <ExecuteProcessData
               Executable="C:\Users\bcmenic\Desktop\OrderValuesInAttributes\Published\OrderValuesInAttributes.exe"
-              Arguments="ValeState Sort local" />
+              Arguments="ValeState Sort remote" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -1408,7 +1408,7 @@
           DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{6d20afb4-fedf-47b7-8c8d-a948d4ef914c}"
-          DTS:From="Package\Sequence Container\Delete data from Local SQL - ValeState - Step 1"
+          DTS:From="Package\Sequence Container\Delete data STG_ValeState - Step 1"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\Sequence Container\Import ValeState OLD and NEW" />
@@ -1427,20 +1427,20 @@
           DTS:From="Package\Sequence Container\Equalize Data - DirXML-Associations"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Sequence Container\Delete data from Remote SQL - ValeState Tables" />
+          DTS:To="Package\Sequence Container\Delete data ValeState Tables" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
           DTS:DTSID="{19bab909-ed27-422e-8924-f8829dc8ab21}"
-          DTS:From="Package\Sequence Container\Insert into Remote SQL - ValeState Tables"
+          DTS:From="Package\Sequence Container\Insert into ValeState Tables"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
-          DTS:To="Package\Sequence Container\Delete data from Local SQL - ValeCountry - Step 2" />
+          DTS:To="Package\Sequence Container\Delete data STG_ValeState - Step 2" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
           DTS:DTSID="{53faf957-273e-40c9-8ab9-4b8c69286a08}"
-          DTS:From="Package\Sequence Container\Delete data from Remote SQL - ValeState Tables"
+          DTS:From="Package\Sequence Container\Delete data ValeState Tables"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
           DTS:To="Package\Sequence Container\Sort ObjectClass" />
@@ -1451,7 +1451,7 @@
           DTS:From="Package\Sequence Container\Sort ObjectClass"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 5"
-          DTS:To="Package\Sequence Container\Insert into Remote SQL - ValeState Tables" />
+          DTS:To="Package\Sequence Container\Insert into ValeState Tables" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -1468,17 +1468,17 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="322,42"
-          Id="Package\Sequence Container\Delete data from Local SQL - ValeCountry - Step 2"
-          TopLeft="55,515" />
+          Size="256,42"
+          Id="Package\Sequence Container\Delete data STG_ValeState - Step 2"
+          TopLeft="90,515" />
         <NodeLayout
-          Size="313,42"
-          Id="Package\Sequence Container\Delete data from Local SQL - ValeState - Step 1"
-          TopLeft="56,22" />
+          Size="256,42"
+          Id="Package\Sequence Container\Delete data STG_ValeState - Step 1"
+          TopLeft="89,20" />
         <NodeLayout
-          Size="320,42"
-          Id="Package\Sequence Container\Delete data from Remote SQL - ValeState Tables"
-          TopLeft="57,261" />
+          Size="222,42"
+          Id="Package\Sequence Container\Delete data ValeState Tables"
+          TopLeft="105,262" />
         <NodeLayout
           Size="259,42"
           Id="Package\Sequence Container\Equalize Data - DirXML-Associations"
@@ -1488,27 +1488,27 @@
           Id="Package\Sequence Container\Import ValeState OLD and NEW"
           TopLeft="97,100" />
         <NodeLayout
-          Size="287,42"
-          Id="Package\Sequence Container\Insert into Remote SQL - ValeState Tables"
-          TopLeft="68,421" />
+          Size="214,42"
+          Id="Package\Sequence Container\Insert into ValeState Tables"
+          TopLeft="109,423" />
         <NodeLayout
           Size="162,42"
           Id="Package\Sequence Container\Sort ObjectClass"
           TopLeft="135,341" />
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
-          TopLeft="213.75,64">
+          TopLeft="216,62">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36"
+              EndConnector="0,38"
               Start="0,0"
-              End="0,28.5">
+              End="0,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.5" />
+                    End="0,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1541,18 +1541,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
-          TopLeft="219.25,225">
+          TopLeft="218.75,225">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36"
+              EndConnector="0,37"
               Start="0,0"
-              End="0,28.5">
+              End="0,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.5" />
+                    End="0,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1563,18 +1563,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
-          TopLeft="213.75,463">
+          TopLeft="217,465">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,52"
+              EndConnector="0,50"
               Start="0,0"
-              End="0,44.5">
+              End="0,42.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.5" />
+                    End="0,42.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1585,18 +1585,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
-          TopLeft="216.5,303">
+          TopLeft="216,304">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38"
+              EndConnector="0,37"
               Start="0,0"
-              End="0,30.5">
+              End="0,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
+                    End="0,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1607,18 +1607,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint 5]"
-          TopLeft="213.75,383">
+          TopLeft="216,383">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38"
+              EndConnector="0,40"
               Start="0,0"
-              End="0,30.5">
+              End="0,32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
+                    End="0,32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1643,16 +1643,24 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="190,42"
-          Id="Package\Sequence Container\Import ValeState OLD and NEW\SQL - ValeState - OLD"
-          TopLeft="206,271" />
-        <NodeLayout
           Size="191,42"
           Id="Package\Sequence Container\Import ValeState OLD and NEW\CSV - ValeState - OLD"
           TopLeft="206,85" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Sequence Container\Import ValeState OLD and NEW\CSV - ValeState - NEW"
+          TopLeft="457,85" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Sequence Container\Import ValeState OLD and NEW\SQL - ValeState - NEW"
+          TopLeft="457,271" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Sequence Container\Import ValeState OLD and NEW\SQL - ValeState - OLD"
+          TopLeft="206,271" />
         <EdgeLayout
-          Id="Package\Sequence Container\Import ValeState OLD and NEW.Paths[Flat File Source Output]"
-          TopLeft="301.25,127">
+          Id="Package\Sequence Container\Import ValeState OLD and NEW.Paths[Flat File Source Output1]"
+          TopLeft="553.75,127">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1672,17 +1680,9 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="193,42"
-          Id="Package\Sequence Container\Import ValeState OLD and NEW\SQL - ValeState - NEW"
-          TopLeft="457,271" />
-        <NodeLayout
-          Size="194,42"
-          Id="Package\Sequence Container\Import ValeState OLD and NEW\CSV - ValeState - NEW"
-          TopLeft="457,85" />
         <EdgeLayout
-          Id="Package\Sequence Container\Import ValeState OLD and NEW.Paths[Flat File Source Output1]"
-          TopLeft="553.75,127">
+          Id="Package\Sequence Container\Import ValeState OLD and NEW.Paths[Flat File Source Output]"
+          TopLeft="301.25,127">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"

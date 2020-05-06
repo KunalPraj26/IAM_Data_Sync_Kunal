@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{949B334B-6CF3-47F0-80D7-88CFDAD9842C}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{F6BA912A-4A55-4AD7-AC43-2FFC4E604268}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,7 @@
       DTS:ObjectName="iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com.IAM.admin">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com;User ID=admin;Initial Catalog=IAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArr5P3dMELUabwhws5ZNnqwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACxm4LHY4rBgDKHjEWClZynAAAAAASAAACgAAAAEAAAALAZpCh/lzsKzgtNvpRkOawwAAAA0QM9nTWO0rCK0vTxnMoArbku+cfCzpcJduE0uZl7A5GXe/ErjJGmizfZX1mZhm3UFAAAAEc2PrhvUHlDkBar4Q8fS6JT2kQf</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=iamupgradeanalysis.ctvkpsgubutg.us-east-1.rds.amazonaws.com;User ID=admin;Initial Catalog=IAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -876,7 +871,7 @@
           <DTS:ObjectData>
             <ExecuteProcessData
               Executable="C:\Users\bcmenic\Desktop\OrderValuesInAttributes\Published\OrderValuesInAttributes.exe"
-              Arguments="Users_nrfResourceHistory Users_nrfResourceHistory local &quot;C:\Users\bcmenic\Desktop\DataAnalysis\Users nrfResourceHistory\Users_nrfResourceHistory_OLD.csv&quot; &quot;C:\Users\bcmenic\Desktop\DataAnalysis\Users nrfResourceHistory\Users_nrfResourceHistory_NEW.csv&quot;" />
+              Arguments="Users_nrfResourceHistory Users_nrfResourceHistory remote &quot;C:\Users\bcmenic\Desktop\DataAnalysis\Users nrfResourceHistory\Users_nrfResourceHistory_OLD.csv&quot; &quot;C:\Users\bcmenic\Desktop\DataAnalysis\Users nrfResourceHistory\Users_nrfResourceHistory_NEW.csv&quot;" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
